@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verónica Bettina Coach - Tienda Sistémica & Sesiones Online</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            plumDark: '#1B0512',      /* Deep rich background */
+                            plumCard: '#2B0A1E',      /* Card surface */
+                            plumSurface: '#3A0E28',   /* Elevated surface */
+                            plumBorder: '#54143B',    /* Subdued border */
+                            goldLight: '#F5E5C9',     /* Champagne gold text */
+                            goldBase: '#D4AF37',      /* Pure gold accent */
+                            goldDark: '#A37B28',      /* Warm gold shade */
+                            roseAccent: '#E89CAE',    /* Soft rose highlight */
+                            textBright: '#FAF4EB',    /* Primary text */
+                            textMuted: '#CBB2C0'      /* Muted secondary text */
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                        script: ['"Great Vibes"', '"Allura"', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #170410;
+            color: #FAF4EB;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(140, 24, 74, 0.25) 0%, transparent 60%),
+                radial-gradient(circle at 80% 50%, rgba(106, 18, 61, 0.18) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(74, 14, 46, 0.2) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #FAF0D7 0%, #E5C378 40%, #D4AF37 70%, #9E7624 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-border {
+            border: 1px solid rgba(212, 175, 55, 0.35);
+        }
+
+        .gold-border-glow:hover {
+            border-color: rgba(229, 195, 120, 0.8);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .luxe-card {
+            background: linear-gradient(165deg, rgba(45, 10, 31, 0.85) 0%, rgba(27, 5, 18, 0.95) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .luxe-card:hover {
+            border-color: rgba(229, 195, 120, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px -5px rgba(106, 18, 61, 0.4);
+        }
+
+        .luxe-btn-gold {
+            background: linear-gradient(135deg, #F3E1B9 0%, #D4AF37 50%, #A37B28 100%);
+            color: #1B0512;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
+            transition: all 0.25s ease;
+        }
+
+        .luxe-btn-gold:hover {
+            filter: brightness(1.12);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .icon-gold-badge {
+            background: radial-gradient(circle at 30% 30%, #54143B 0%, #2B0A1E 100%);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: inset 0 0 8px rgba(212, 175, 55, 0.15);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #170410;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #54143B;
+            border-radius: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8C184A;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-goldBase selection:text-brand-plumDark">
+
+    <svg class="hidden" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <radialGradient id="vbLogoBg" cx="38%" cy="32%" r="68%">
+                <stop offset="0%" stop-color="#ECE3D4"/>
+                <stop offset="20%" stop-color="#D4B083"/>
+                <stop offset="45%" stop-color="#AD2B73"/>
+                <stop offset="75%" stop-color="#5E0D3C"/>
+                <stop offset="100%" stop-color="#240317"/>
+            </radialGradient>
+            <linearGradient id="vbGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFF3D1"/>
+                <stop offset="30%" stop-color="#EED08A"/>
+                <stop offset="70%" stop-color="#B88A36"/>
+                <stop offset="100%" stop-color="#F2D795"/>
+            </linearGradient>
+            <radialGradient id="sparkGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#FFFFFF"/>
+                <stop offset="40%" stop-color="#FFE8A3"/>
+                <stop offset="100%" stop-color="#FFE8A3" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="logoEmboss" x="-10%" y="-10%" width="120%" height="120%">
+                <feDropShadow dx="1.5" dy="2" stdDeviation="1" flood-color="#1A0210" flood-opacity="0.85"/>
+            </filter>
+            <g id="vb-logo">
+                <circle cx="150" cy="150" r="146" fill="url(#vbLogoBg)" stroke="url(#vbGoldGrad)" stroke-width="3" />
+                <circle cx="150" cy="150" r="142" fill="none" stroke="#FFFFFF" stroke-opacity="0.15" stroke-width="0.8" />
+                <path d="M 198 250 C 202 232, 222 210, 238 192 C 250 178, 244 168, 248 165 C 252 162, 258 168, 254 172 C 248 178, 262 162, 264 145 C 266 132, 252 126, 248 118 C 242 108, 244 92, 236 80 C 222 58, 195 32, 155 26 C 120 20, 85 36, 75 62 C 68 80, 82 105, 108 116 C 135 128, 168 118, 180 92 C 188 75, 172 56, 152 62 C 138 66, 128 82, 142 96 C 155 108, 182 122, 204 128" fill="none" stroke="url(#vbGoldGrad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#logoEmboss)" />
+                <circle cx="198" cy="250" r="14" fill="url(#sparkGlow)" />
+                <path d="M 198 232 L 198 268 M 180 250 L 216 250 M 185 237 L 211 263 M 185 263 L 211 237" stroke="#FFFFFF" stroke-width="1.5" opacity="0.9" />
+                <g font-family="'Montserrat', sans-serif" font-weight="600" fill="url(#vbGoldGrad)" filter="url(#logoEmboss)">
+                    <text x="56" y="180" font-size="34" letter-spacing="0.5">Verónica</text>
+                    <text x="56" y="216" font-size="34" letter-spacing="0.5">Bettina</text>
+                    <text x="57" y="250" font-size="28" font-weight="500" letter-spacing="3.5">COACH</text>
+                </g>
+            </g>
+        </defs>
+    </svg>
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-plumDark/90 backdrop-blur-md border-b border-brand-goldBase/20 shadow-lg shadow-black/40">
+        <div class="max-w-7xl mx-auto px-6 h-22 flex items-center justify-between py-3">
+            <!-- Brand Logo with Emblem Badge -->
+            <a href="#" class="flex items-center space-x-3.5 group">
+                <div class="w-12 h-12 rounded-full p-0.5 bg-gradient-to-br from-[#FAF0D7] via-[#D4AF37] to-[#A37B28] shadow-md group-hover:scale-105 transition-transform duration-300">
+                    <svg viewBox="0 0 300 300" class="w-full h-full rounded-full"><use href="#vb-logo"/></svg>
+                </div>
+                <div>
+                    <span class="block text-2xl font-serif font-semibold tracking-wide gold-text-gradient">Verónica Bettina</span>
+                    <span class="block text-xs font-script text-brand-goldLight -mt-1 tracking-widest">Coach Holístico & Sistémico</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-10 text-xs tracking-widest uppercase font-medium text-brand-textBright/80">
+                <a href="#portada" class="hover:text-brand-goldLight transition-colors">Inicio</a>
+                <a href="#audio-perdon" class="hover:text-brand-goldLight transition-colors flex items-center gap-1.5 text-brand-goldLight font-semibold">
+                    <i class="fa-solid fa-sparkles text-xs"></i> Audio del Perdón
+                </a>
+                <a href="#sesiones" class="hover:text-brand-goldLight transition-colors">Sesiones</a>
+                <a href="#ebooks" class="hover:text-brand-goldLight transition-colors">Ebooks</a>
+                <a href="#sobre-mi" class="hover:text-brand-goldLight transition-colors">Sobre Mí</a>
+            </nav>
+
+            <!-- Actions Right -->
+            <div class="flex items-center space-x-4">
+                <!-- Currency Toggle -->
+                <div class="border border-brand-goldBase/30 rounded-full p-0.5 flex items-center text-xs font-medium bg-brand-plumCard/80">
+                    <button id="btn-ars" onclick="setCurrency('ARS')" class="px-3.5 py-1 rounded-full transition-all luxe-btn-gold">ARS</button>
+                    <button id="btn-usd" onclick="setCurrency('USD')" class="px-3.5 py-1 rounded-full transition-all text-brand-textMuted hover:text-brand-goldLight">USD</button>
+                </div>
+
+                <!-- Shopping Cart Icon -->
+                <button onclick="toggleCartDrawer()" class="relative p-2.5 text-brand-goldLight hover:text-white transition-colors rounded-full border border-brand-goldBase/30 bg-brand-plumCard">
+                    <i class="fa-solid fa-bag-shopping text-base"></i>
+                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-gradient-to-r from-brand-goldBase to-brand-goldDark text-brand-plumDark text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center hidden shadow-md">0</span>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-brand-goldLight">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-plumDark/95 border-b border-brand-goldBase/30 px-6 py-6 space-y-4 text-base font-medium text-brand-textBright">
+            <a href="#portada" onclick="toggleMobileMenu()" class="block hover:text-brand-goldLight">Inicio</a>
+            <a href="#audio-perdon" onclick="toggleMobileMenu()" class="block text-brand-goldLight font-semibold">✨ Audio del Perdón</a>
+            <a href="#sesiones" onclick="toggleMobileMenu()" class="block hover:text-brand-goldLight">Sesiones Online</a>
+            <a href="#ebooks" onclick="toggleMobileMenu()" class="block hover:text-brand-goldLight">Ebooks Digitales</a>
+            <a href="#sobre-mi" onclick="toggleMobileMenu()" class="block hover:text-brand-goldLight">Sobre Mí</a>
+        </div>
+    </header>
+
+    <section id="portada" class="relative pt-36 pb-24 lg:pt-44 lg:pb-36 overflow-hidden min-h-screen flex items-center border-b border-brand-goldBase/20">
+        <!-- Soft Sunset Ambient Accent Background -->
+        <div class="absolute inset-0 z-0 opacity-25 pointer-events-none">
+            <img src="https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1600&q=80" alt="Atardecer Tenue" class="w-full h-full object-cover filter brightness-75 contrast-125">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-plumDark/80 via-brand-plumDark/60 to-brand-plumDark"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
+            <!-- Header Identity with Gold Badge Logo -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center justify-center w-32 h-32 sm:w-36 sm:h-36 rounded-full p-1 bg-gradient-to-br from-[#FAF0D7] via-[#D4AF37] to-[#A37B28] shadow-2xl shadow-brand-goldBase/20 mb-6 group hover:scale-105 transition-transform duration-500">
+                    <svg viewBox="0 0 300 300" class="w-full h-full rounded-full"><use href="#vb-logo"/></svg>
+                </div>
+                <p class="text-3xl font-script text-brand-goldLight mb-1 drop-shadow">@veronicabettina.coach</p>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-light tracking-tight leading-tight gold-text-gradient">
+                    Acompañamiento Holístico & Sistémico
+                </h1>
+                <p class="text-2xl font-script text-brand-roseAccent mt-3">Sesiones On Line & Experiencias de Transformación</p>
+            </div>
+
+            <!-- Content Grid: Disciplines & Manifesto Note -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+                <!-- Disciplines List -->
+                <div class="lg:col-span-6 flex flex-col justify-between space-y-6">
+                    <div class="luxe-card p-8 rounded-3xl shadow-xl">
+                        <h3 class="text-xs uppercase tracking-widest text-brand-goldLight font-semibold mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-sparkles text-brand-goldBase"></i> Herramientas de Transformación Profunda
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                            <div class="flex items-center p-4 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20 hover:border-brand-goldBase/50 transition-colors">
+                                <i class="fa-solid fa-tree text-brand-goldBase text-base mr-3.5"></i>
+                                <span class="text-sm font-medium text-brand-textBright">Constelaciones Familiares</span>
+                            </div>
+                            <div class="flex items-center p-4 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20 hover:border-brand-goldBase/50 transition-colors">
+                                <i class="fa-solid fa-sitemap text-brand-roseAccent text-base mr-3.5"></i>
+                                <span class="text-sm font-medium text-brand-textBright">Árbol Genealógico</span>
+                            </div>
+                            <div class="flex items-center p-4 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20 hover:border-brand-goldBase/50 transition-colors">
+                                <i class="fa-solid fa-dna text-brand-goldLight text-base mr-3.5"></i>
+                                <span class="text-sm font-medium text-brand-textBright">Biodecodificación</span>
+                            </div>
+                            <div class="flex items-center p-4 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20 hover:border-brand-goldBase/50 transition-colors">
+                                <i class="fa-solid fa-hourglass-half text-brand-goldBase text-base mr-3.5"></i>
+                                <span class="text-sm font-medium text-brand-textBright">Regresiones & Vidas Pasadas</span>
+                            </div>
+                            <div class="flex items-center p-4 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20 hover:border-brand-goldBase/50 transition-colors">
+                                <i class="fa-solid fa-brain text-brand-roseAccent text-base mr-3.5"></i>
+                                <span class="text-sm font-medium text-brand-textBright">Hipnosis Clínica</span>
+                            </div>
+                            <div class="flex items-center p-4 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20 hover:border-brand-goldBase/50 transition-colors">
+                                <i class="fa-solid fa-hand-holding-heart text-brand-goldLight text-base mr-3.5"></i>
+                                <span class="text-sm font-medium text-brand-textBright">EFT Tapping</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Actions -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#sesiones" class="flex-1 luxe-btn-gold py-4 px-6 rounded-2xl font-semibold text-xs tracking-widest uppercase text-center flex items-center justify-center space-x-2">
+                            <span>Explorar Sesiones</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="https://wa.me/5491170135315?text=Hola%20Ver%C3%B3nica,%20me%20gustar%C3%ADa%20consultar%20por%20una%20sesi%C3%B3n" target="_blank" class="flex-1 border border-brand-goldBase/40 bg-brand-plumCard hover:border-brand-goldBase text-brand-goldLight py-4 px-6 rounded-2xl font-semibold text-xs tracking-widest uppercase text-center transition-colors flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i>
+                            <span>WhatsApp Directo</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Manifesto Card (White Paper Sheet with Violet, Black & Ochre Typography) -->
+                <div class="lg:col-span-6 flex items-center">
+                    <div class="relative w-full my-4">
+                        <!-- Paperclip metallic overlay in Ochre Gold -->
+                        <div class="absolute -top-6 right-8 sm:right-12 z-20 pointer-events-none drop-shadow-md">
+                            <svg class="w-10 h-16 text-[#A37B28] fill-current -rotate-12" viewBox="0 0 24 24">
+                                <path d="M16.5 6v11.5c0 2.21-1.79 4-4 4s-4-1.79-4-4V5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5v10.5c0 .55-.45 1-1 1s-1-.45-1-1V6H10v9.5c0 1.66 1.34 3 3 3s3-1.34 3-3V5c0-2.76-2.24-5-5-5S6 2.24 6 5v12.5c0 3.31 2.69 6 6 6s6-2.69 6-6V6h-1.5z"/>
+                            </svg>
+                        </div>
+
+                        <!-- Paper sheet card with White Background -->
+                        <div class="bg-white p-8 sm:p-10 rounded-2xl border-2 border-[#D4AF37]/50 shadow-2xl shadow-black/50 transform rotate-1 hover:rotate-0 transition-transform duration-300 relative overflow-hidden">
+                            
+                            <!-- Vertical margin line in subtle violet -->
+                            <div class="absolute top-0 bottom-0 left-10 sm:left-12 w-[1.5px] bg-purple-300/60 pointer-events-none"></div>
+
+                            <div class="relative z-10 pl-4 sm:pl-6">
+                                <h3 class="text-2xl sm:text-3xl font-serif font-semibold text-[#3A0E28] mb-6 flex items-center">
+                                    <i class="fa-solid fa-heart text-[#A37B28] text-sm mr-3"></i>
+                                    <span>Propósito del Acompañamiento</span>
+                                </h3>
+
+                                <ul class="space-y-4 text-base font-medium leading-relaxed">
+                                    <li class="flex items-start">
+                                        <span class="text-[#54143B] mr-3 text-sm font-bold">♥</span>
+                                        <span class="text-zinc-900">Sesiones profundas para transformar tu historia y desatar nudos emocionales.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-[#A37B28] mr-3 text-sm font-bold">♥</span>
+                                        <span class="text-zinc-900">Herramientas para sanar, comprender y liberar lo que no te pertenece.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-[#54143B] mr-3 text-sm font-bold">♥</span>
+                                        <span class="text-zinc-900">Acompañamiento amoroso, profesional y 100% personalizado.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-[#A37B28] mr-3 text-sm font-bold">♥</span>
+                                        <span class="text-zinc-900">Desde donde estés, a tu tiempo y en tu espacio seguro.</span>
+                                    </li>
+                                </ul>
+
+                                <div class="mt-8 pt-6 border-t border-purple-200 flex items-center justify-between">
+                                    <span class="font-script text-3xl sm:text-4xl text-[#54143B] font-semibold">Es tiempo de Despertar</span>
+                                    <a href="https://wa.me/5491170135315" target="_blank" class="text-xs font-semibold uppercase tracking-wider text-brand-plumDark luxe-btn-gold px-4 py-2 rounded-xl flex items-center shadow-md hover:scale-105 transition-all">
+                                        Reservar cita <i class="fa-solid fa-chevron-right ml-1.5 text-[10px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="audio-perdon" class="py-24 bg-gradient-to-b from-brand-plumDark via-[#27081B] to-brand-plumDark border-b border-brand-goldBase/20 relative overflow-hidden">
+        <!-- Background Ambient Glow -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-goldBase/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Details & Benefits -->
+                <div class="lg:col-span-7 space-y-8 text-left">
+                    <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-brand-goldBase/40 bg-brand-plumCard text-brand-goldLight text-xs tracking-widest uppercase font-semibold">
+                        <i class="fa-solid fa-sparkles text-brand-goldBase"></i>
+                        <span>Experiencia Terapéutica Guiada</span>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-script text-brand-goldLight drop-shadow-md">
+                            Audio del Perdón
+                        </h2>
+                        <p class="text-xl sm:text-2xl font-serif text-brand-textBright font-light leading-relaxed">
+                            Una meditación guiada para liberar rencores, culpas y heridas del pasado.
+                        </p>
+                    </div>
+
+                    <!-- Benefit Bullets with Gold Badges (Lotus, Heart, Moon, Spark) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+                        <div class="flex items-center space-x-4 p-3.5 rounded-2xl bg-brand-plumCard/60 border border-brand-goldBase/20">
+                            <div class="w-12 h-12 rounded-full icon-gold-badge flex items-center justify-center flex-shrink-0 text-brand-goldLight text-lg">
+                                <i class="fa-solid fa-spa"></i>
+                            </div>
+                            <span class="text-sm font-medium text-brand-textBright">Liberá emociones atrapadas y encontrá paz interior.</span>
+                        </div>
+
+                        <div class="flex items-center space-x-4 p-3.5 rounded-2xl bg-brand-plumCard/60 border border-brand-goldBase/20">
+                            <div class="w-12 h-12 rounded-full icon-gold-badge flex items-center justify-center flex-shrink-0 text-brand-goldLight text-lg">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <span class="text-sm font-medium text-brand-textBright">Mejorá tus relaciones y tu conexión personal.</span>
+                        </div>
+
+                        <div class="flex items-center space-x-4 p-3.5 rounded-2xl bg-brand-plumCard/60 border border-brand-goldBase/20">
+                            <div class="w-12 h-12 rounded-full icon-gold-badge flex items-center justify-center flex-shrink-0 text-brand-goldLight text-lg">
+                                <i class="fa-solid fa-moon"></i>
+                            </div>
+                            <span class="text-sm font-medium text-brand-textBright">Dormís más liviano/a y en plena armonía.</span>
+                        </div>
+
+                        <div class="flex items-center space-x-4 p-3.5 rounded-2xl bg-brand-plumCard/60 border border-brand-goldBase/20">
+                            <div class="w-12 h-12 rounded-full icon-gold-badge flex items-center justify-center flex-shrink-0 text-brand-goldLight text-lg">
+                                <i class="fa-solid fa-sun"></i>
+                            </div>
+                            <span class="text-sm font-medium text-brand-textBright">Abrís espacio para el amor y la abundancia.</span>
+                        </div>
+                    </div>
+
+                    <!-- Callout Recommendation Box -->
+                    <div class="p-6 rounded-2xl border border-brand-goldBase/40 bg-gradient-to-r from-brand-plumCard to-[#3A0D28] flex items-center space-x-5 shadow-xl">
+                        <div class="w-14 h-14 rounded-full bg-brand-plumDark border border-brand-goldBase/50 flex items-center justify-center text-brand-goldLight text-2xl flex-shrink-0">
+                            <i class="fa-solid fa-cloud-moon"></i>
+                        </div>
+                        <div class="text-sm text-brand-textBright font-light">
+                            <p class="font-medium text-brand-goldLight text-base">Recomendación Diaria:</p>
+                            <p>Escuchalo todas las noches antes de dormir, por lo menos <span class="font-semibold text-brand-goldLight underline decoration-brand-goldBase">21 días consecutivos</span>.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-2 flex flex-col sm:flex-row gap-4">
+                        <button onclick="addToCart('audio-perdon')" class="luxe-btn-gold py-4 px-8 rounded-2xl font-semibold text-xs tracking-widest uppercase flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-bag-shopping text-base"></i>
+                            <span>Adquirir Audio del Perdón</span>
+                        </button>
+                        <a href="https://wa.me/5491170135315?text=Hola%20Ver%C3%B3nica,%20quisiera%20consultar%20por%20el%20Audio%20del%20Perd%C3%B3n" target="_blank" class="border border-brand-goldBase/40 hover:border-brand-goldBase text-brand-goldLight py-4 px-8 rounded-2xl font-semibold text-xs tracking-widest uppercase text-center transition-colors flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i>
+                            <span>Consultar por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Visual Player Mockup (Simulated Phone/Player Frame from reference image) -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-sm rounded-[3rem] p-4 bg-gradient-to-b from-[#54143B] via-[#2B0A1E] to-[#12030D] border-2 border-brand-goldBase/40 shadow-2xl shadow-brand-goldBase/10">
+                        <div class="rounded-[2.5rem] bg-[#1B0512] p-6 border border-brand-goldBase/20 text-center space-y-6 relative overflow-hidden">
+                            <!-- Lotus background watermark -->
+                            <i class="fa-solid fa-spa text-[180px] text-brand-goldBase/5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"></i>
+
+                            <!-- Metallic Logo Badge inside phone -->
+                            <div class="mx-auto w-24 h-24 rounded-full p-1 bg-gradient-to-br from-[#FAF0D7] via-[#D4AF37] to-[#A37B28] shadow-lg">
+                                <svg viewBox="0 0 300 300" class="w-full h-full rounded-full"><use href="#vb-logo"/></svg>
+                            </div>
+
+                            <div>
+                                <h3 class="text-3xl font-script text-brand-goldLight">Audio del Perdón</h3>
+                                <p class="text-xs font-serif text-brand-textMuted tracking-wider uppercase mt-1">Meditación Guiada Terapéutica</p>
+                            </div>
+
+                            <!-- Decorative Lotus Line Art -->
+                            <div class="py-2 text-brand-goldBase text-4xl">
+                                <i class="fa-solid fa-spa"></i>
+                            </div>
+
+                            <!-- Audio Bar Simulation -->
+                            <div class="space-y-2">
+                                <div class="w-full h-1 bg-brand-plumBorder rounded-full overflow-hidden">
+                                    <div class="w-1/3 h-full bg-gradient-to-r from-brand-goldLight to-brand-goldBase"></div>
+                                </div>
+                                <div class="flex justify-between text-[10px] text-brand-textMuted font-mono">
+                                    <span>0:00</span>
+                                    <span>21:00</span>
+                                </div>
+                            </div>
+
+                            <!-- Controls -->
+                            <div class="flex items-center justify-center space-x-6 pt-2">
+                                <button class="text-brand-goldLight text-lg hover:scale-110 transition-transform"><i class="fa-solid fa-backward-step"></i></button>
+                                <button class="w-14 h-14 rounded-full luxe-btn-gold text-brand-plumDark text-xl flex items-center justify-center shadow-lg"><i class="fa-solid fa-play ml-1"></i></button>
+                                <button class="text-brand-goldLight text-lg hover:scale-110 transition-transform"><i class="fa-solid fa-forward-step"></i></button>
+                            </div>
+
+                            <p class="text-[11px] font-script text-brand-goldLight pt-2">Compromete con vos • 21 noches pueden transformar tu vida</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="sesiones" class="py-24 bg-brand-plumDark border-b border-brand-goldBase/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-semibold tracking-widest uppercase text-brand-goldLight border border-brand-goldBase/30 px-4 py-1.5 rounded-full bg-brand-plumCard">
+                    Procesos Individuales
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-light text-brand-textBright mt-4 gold-text-gradient">Sesiones Online</h2>
+                <p class="text-base text-brand-textMuted mt-3 font-light leading-relaxed">
+                    Encuentros virtuales individuales de 1 hora a 1h30m orientados a destrabar patrones, comprender síntomas y reordenar tu sistema familiar.
+                </p>
+            </div>
+
+            <div id="sessions-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+    </section>
+
+    <section id="ebooks" class="py-24 bg-gradient-to-b from-brand-plumDark via-[#220617] to-brand-plumDark border-b border-brand-goldBase/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-semibold tracking-widest uppercase text-brand-goldLight border border-brand-goldBase/30 px-4 py-1.5 rounded-full bg-brand-plumCard">
+                    Librería Digital
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-light text-brand-textBright mt-4 gold-text-gradient">Ebooks & Audios</h2>
+                <p class="text-base text-brand-textMuted mt-3 font-light leading-relaxed">
+                    Guías prácticas, cuadernos de ejercicios y meditaciones para acompañar tu proceso personal a tu ritmo.
+                </p>
+            </div>
+
+            <div id="ebooks-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dynamically populated via JS -->
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre-mi" class="py-24 bg-brand-plumDark border-b border-brand-goldBase/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-4xl mx-auto luxe-card p-8 sm:p-14 rounded-3xl border border-brand-goldBase/30 text-center shadow-2xl">
+                <!-- Emblem Badge -->
+                <div class="inline-flex items-center justify-center w-24 h-24 rounded-full p-1 bg-gradient-to-br from-[#FAF0D7] via-[#D4AF37] to-[#A37B28] mb-6 shadow-xl">
+                    <svg viewBox="0 0 300 300" class="w-full h-full rounded-full"><use href="#vb-logo"/></svg>
+                </div>
+                <div>
+                    <span class="inline-block text-xs font-semibold tracking-widest uppercase text-brand-goldLight border border-brand-goldBase/30 px-4 py-1.5 rounded-full bg-brand-plumDark mb-4">
+                        Trayectoria & Enfoque
+                    </span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-light text-brand-textBright mb-3 gold-text-gradient">Te acompaño a mirar tu sistema con amor y claridad</h2>
+                <p class="font-script text-3xl text-brand-roseAccent mb-6">Verónica Bettina • Coach Ontológico & Facilitadora Sistémica</p>
+                <p class="text-base sm:text-lg text-brand-textMuted font-light leading-relaxed max-w-2xl mx-auto">
+                    Mi propósito es brindarte un espacio seguro de escucha, sin juicios, donde podamos integrar la mirada sistémica con herramientas terapéuticas complementarias. Cada consulta es una oportunidad para reordenar tu árbol genealógico, tomar tu propia fuerza y dar pasos con liviandad.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-8 mt-8 border-t border-brand-goldBase/20 text-left">
+                    <div class="p-6 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20">
+                        <i class="fa-solid fa-certificate text-brand-goldBase text-xl mb-3"></i>
+                        <h4 class="font-semibold text-brand-goldLight text-xs uppercase tracking-wider">Formación Continua</h4>
+                        <p class="text-xs sm:text-sm text-brand-textMuted mt-1.5 font-light">Constelaciones, Biodecodificación e Hipnosis Terapéutica.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20">
+                        <i class="fa-solid fa-globe text-brand-goldBase text-xl mb-3"></i>
+                        <h4 class="font-semibold text-brand-goldLight text-xs uppercase tracking-wider">Modalidad Online</h4>
+                        <p class="text-xs sm:text-sm text-brand-textMuted mt-1.5 font-light">Sesiones globales en habla hispana desde la comodidad de tu hogar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#12030D] text-brand-textBright py-16 border-t border-brand-goldBase/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div class="md:col-span-2">
+                    <a href="#" class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 rounded-full p-0.5 bg-gradient-to-br from-[#FAF0D7] to-[#A37B28]">
+                            <svg viewBox="0 0 300 300" class="w-full h-full rounded-full"><use href="#vb-logo"/></svg>
+                        </div>
+                        <span class="text-xl font-serif font-semibold gold-text-gradient">Verónica Bettina Coach</span>
+                    </a>
+                    <p class="text-sm text-brand-textMuted max-w-sm font-light leading-relaxed">
+                        Acompañamiento holístico para sanar lealtades invisibles, transformar patrones y vivir con mayor libertad emocional.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs uppercase tracking-widest font-semibold text-brand-goldLight mb-4">Contacto Directo</h4>
+                    <ul class="space-y-3 text-sm text-brand-textMuted font-light">
+                        <li>
+                            <a href="https://wa.me/5491170135315" target="_blank" class="hover:text-brand-goldLight flex items-center transition-colors">
+                                <i class="fa-brands fa-whatsapp text-emerald-400 mr-2 text-base"></i> +54 9 11 7013-5315
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-envelope mr-2 text-brand-goldBase"></i> contacto@veronicabettina.com
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs uppercase tracking-widest font-semibold text-brand-goldLight mb-4">Redes Sociales</h4>
+                    <div class="flex space-x-3">
+                        <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-full border border-brand-goldBase/30 bg-brand-plumCard flex items-center justify-center text-brand-goldLight hover:border-brand-goldBase transition-colors">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="w-10 h-10 rounded-full border border-brand-goldBase/30 bg-brand-plumCard flex items-center justify-center text-brand-goldLight hover:border-brand-goldBase transition-colors">
+                            <i class="fa-brands fa-facebook text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-brand-goldBase/10 text-center text-xs text-brand-textMuted font-light">
+                <p>&copy; 2026 Verónica Bettina Coach. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Info Pop-up Modal -->
+    <div id="modal-container" class="fixed inset-0 z-50 overflow-y-auto hidden">
+        <div class="fixed inset-0 bg-black/70 backdrop-blur-md transition-opacity" onclick="closeModal()"></div>
+        <div class="flex min-h-full items-center justify-center p-4 sm:p-6 text-center">
+            <div class="relative transform overflow-hidden rounded-3xl bg-[#240718] text-left shadow-2xl transition-all w-full max-w-lg p-6 sm:p-8 border border-brand-goldBase/40 my-8">
+                <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-brand-plumCard border border-brand-goldBase/30 flex items-center justify-center text-brand-textMuted hover:text-brand-goldLight transition-colors z-10">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+                <div id="modal-content">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="toggleCartDrawer()"></div>
+
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-[#240718] border-l border-brand-goldBase/30 flex flex-col justify-between">
+                <div class="p-6 border-b border-brand-goldBase/20 flex items-center justify-between">
+                    <h3 class="text-xl font-serif font-medium gold-text-gradient flex items-center">
+                        <i class="fa-solid fa-bag-shopping text-brand-goldBase mr-3 text-base"></i> Mi Carrito
+                    </h3>
+                    <button onclick="toggleCartDrawer()" class="p-2 text-brand-textMuted hover:text-brand-goldLight">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <div id="cart-items" class="p-6 overflow-y-auto flex-1 space-y-4">
+                    <!-- Populated via JS -->
+                </div>
+
+                <div class="p-6 border-t border-brand-goldBase/20 bg-brand-plumDark space-y-4">
+                    <div class="flex justify-between text-lg font-serif text-brand-textBright">
+                        <span>Total:</span>
+                        <span id="cart-total" class="font-sans font-semibold text-brand-goldLight">$0</span>
+                    </div>
+                    <button onclick="checkoutWhatsApp()" class="w-full luxe-btn-gold py-4 rounded-2xl font-semibold text-xs tracking-widest uppercase flex items-center justify-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Confirmar por WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentCurrency = 'ARS';
+        let cart = [];
+
+        const sessionsData = [
+            {
+                id: 'constelaciones',
+                title: 'Constelaciones Familiares Individuales',
+                priceUsd: 80,
+                priceArs: 120000,
+                image: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80',
+                description: 'Proceso para visibilizar dinámicas ocultas en el sistema familiar, desarmar lealtades invisibles y reordenar tu lugar en la vida.'
+            },
+            {
+                id: 'arbol',
+                title: 'Lectura de Árbol Genealógico',
+                priceUsd: 70,
+                priceArs: 100000,
+                image: 'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80',
+                description: 'Análisis detallado de fechas, nombres y repeticiones transgeneracionales para liberar mandatos y pactos inconscientes.'
+            },
+            {
+                id: 'biodecodificacion',
+                title: 'Sesiones de Biodecodificación',
+                priceUsd: 75,
+                priceArs: 110000,
+                image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80',
+                description: 'Comprende el sentido biológico y emocional detrás de un síntoma físico o patrón recurrente para activar tu autorregulación.'
+            },
+            {
+                id: 'regresiones',
+                title: 'Regresiones & Vidas Pasadas',
+                priceUsd: 85,
+                priceArs: 130000,
+                image: 'https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=800&q=80',
+                description: 'Viaje guiado a memorias pasadas para liberar contratos, votos o cargas del alma que afectan tus decisiones actuales.'
+            },
+            {
+                id: 'hipnosis',
+                title: 'Hipnosis Clínica Terapéutica',
+                priceUsd: 75,
+                priceArs: 110000,
+                image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+                description: 'Técnica profunda de relajación consciente para reprogramar hábitos, fobias, ansiedad y creencias limitantes.'
+            },
+            {
+                id: 'eft',
+                title: 'EFT Tapping & Liberación Emocional',
+                priceUsd: 65,
+                priceArs: 90000,
+                image: 'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=800&q=80',
+                description: 'Estimulación sutil de puntos meridianos para disolver angustia, miedo y dolor emocional de forma ágil.'
+            }
+        ];
+
+        const ebooksData = [
+            {
+                id: 'audio-perdon',
+                title: 'Audio del Perdón - Meditación Guiada',
+                priceUsd: 20,
+                priceArs: 30000,
+                image: 'https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=800&q=80',
+                description: 'Meditación guiada especial de 21 días para sanar heridas del pasado, soltar culpa y liberar rencores.'
+            },
+            {
+                id: 'ebook-1',
+                title: 'Manual Práctico de Auto-Constelaciones',
+                priceUsd: 15,
+                priceArs: 22000,
+                image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80',
+                description: 'Guía con ejercicios con plantilla y muñecos para ordenar tu lugar en el sistema desde tu propia casa.'
+            },
+            {
+                id: 'ebook-2',
+                title: 'Sanando las Heridas del Clan',
+                priceUsd: 18,
+                priceArs: 26000,
+                image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80',
+                description: 'Cuaderno de trabajo paso a paso para indagar y liberar el árbol genealógico sin culpas.'
+            },
+            {
+                id: 'ebook-3',
+                title: 'El Lenguaje Secreto de tus Síntomas',
+                priceUsd: 12,
+                priceArs: 18000,
+                image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80',
+                description: 'Diccionario reflexivo de Biodecodificación para comprender qué te quiere decir tu cuerpo.'
+            }
+        ];
+
+        function formatPrice(ars, usd) {
+            return currentCurrency === 'ARS' ? '$' + ars.toLocaleString('es-AR') + ' ARS' : '$' + usd + ' USD';
+        }
+
+        function setCurrency(curr) {
+            currentCurrency = curr;
+            const btnArs = document.getElementById('btn-ars');
+            const btnUsd = document.getElementById('btn-usd');
+
+            if (curr === 'ARS') {
+                btnArs.className = 'px-3.5 py-1 rounded-full transition-all luxe-btn-gold';
+                btnUsd.className = 'px-3.5 py-1 rounded-full transition-all text-brand-textMuted hover:text-brand-goldLight';
+            } else {
+                btnUsd.className = 'px-3.5 py-1 rounded-full transition-all luxe-btn-gold';
+                btnArs.className = 'px-3.5 py-1 rounded-full transition-all text-brand-textMuted hover:text-brand-goldLight';
+            }
+
+            renderSessions();
+            renderEbooks();
+            updateCartUI();
+        }
+
+        function renderSessions() {
+            const container = document.getElementById('sessions-grid');
+            let html = '';
+
+            sessionsData.forEach(s => {
+                const price = formatPrice(s.priceArs, s.priceUsd);
+                const msg = encodeURIComponent('Hola Verónica, quisiera reservar la sesión de ' + s.title);
+
+                html += '<div class="luxe-card rounded-3xl overflow-hidden flex flex-col justify-between">' +
+                            '<div>' +
+                                '<div class="h-52 overflow-hidden relative border-b border-brand-goldBase/20">' +
+                                    '<img src="' + s.image + '" alt="' + s.title + '" class="w-full h-full object-cover">' +
+                                    '<div class="absolute top-3 right-3 bg-brand-plumDark/90 border border-brand-goldBase/40 text-brand-goldLight font-medium text-xs px-3.5 py-1.5 rounded-full shadow-lg backdrop-blur-md">' + price + '</div>' +
+                                '</div>' +
+                                '<div class="p-6">' +
+                                    '<h3 class="text-2xl font-serif font-medium text-brand-textBright mb-2.5 gold-text-gradient">' + s.title + '</h3>' +
+                                    '<p class="text-brand-textMuted text-sm font-light leading-relaxed mb-4">' + s.description + '</p>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="p-6 pt-0 flex flex-col sm:flex-row gap-2.5">' +
+                                '<button onclick="openModal(\'' + s.id + '\', \'session\')" class="flex-1 bg-brand-plumSurface hover:bg-brand-plumBorder text-brand-goldLight rounded-xl text-xs font-semibold tracking-wider uppercase py-3.5 px-3 border border-brand-goldBase/30 transition-colors flex items-center justify-center space-x-1.5">' +
+                                    '<i class="fa-solid fa-circle-info text-brand-goldBase text-sm"></i>' +
+                                    '<span>Más info</span>' +
+                                '</button>' +
+                                '<a href="https://wa.me/5491170135315?text=' + msg + '" target="_blank" class="flex-1 luxe-btn-gold text-xs font-semibold tracking-wider uppercase py-3.5 px-3 rounded-xl text-center transition-colors flex items-center justify-center space-x-1.5">' +
+                                    '<i class="fa-brands fa-whatsapp text-base"></i>' +
+                                    '<span>Reservar</span>' +
+                                '</a>' +
+                            '</div>' +
+                        '</div>';
+            });
+
+            container.innerHTML = html;
+        }
+
+        function renderEbooks() {
+            const container = document.getElementById('ebooks-grid');
+            let html = '';
+
+            ebooksData.forEach(e => {
+                const price = formatPrice(e.priceArs, e.priceUsd);
+
+                html += '<div class="luxe-card rounded-3xl overflow-hidden flex flex-col justify-between">' +
+                            '<div>' +
+                                '<div class="h-52 overflow-hidden relative border-b border-brand-goldBase/20">' +
+                                    '<img src="' + e.image + '" alt="' + e.title + '" class="w-full h-full object-cover">' +
+                                    '<div class="absolute top-3 right-3 bg-brand-plumDark/90 border border-brand-goldBase/40 text-brand-goldLight font-medium text-xs px-3.5 py-1.5 rounded-full shadow-lg backdrop-blur-md">' + price + '</div>' +
+                                '</div>' +
+                                '<div class="p-6">' +
+                                    '<h3 class="text-2xl font-serif font-medium text-brand-textBright mb-2.5 gold-text-gradient">' + e.title + '</h3>' +
+                                    '<p class="text-brand-textMuted text-sm font-light leading-relaxed mb-4">' + e.description + '</p>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="p-6 pt-0 flex flex-col sm:flex-row gap-2.5">' +
+                                '<button onclick="openModal(\'' + e.id + '\', \'ebook\')" class="flex-1 bg-brand-plumSurface hover:bg-brand-plumBorder text-brand-goldLight rounded-xl text-xs font-semibold tracking-wider uppercase py-3.5 px-3 border border-brand-goldBase/30 transition-colors flex items-center justify-center space-x-1.5">' +
+                                    '<i class="fa-solid fa-circle-info text-brand-goldBase text-sm"></i>' +
+                                    '<span>Más info</span>' +
+                                '</button>' +
+                                '<button onclick="addToCart(\'' + e.id + '\')" class="flex-1 luxe-btn-gold text-xs font-semibold tracking-wider uppercase py-3.5 px-3 rounded-xl text-center transition-colors flex items-center justify-center space-x-1.5">' +
+                                    '<i class="fa-solid fa-cart-plus text-sm"></i>' +
+                                    '<span>Agregar</span>' +
+                                '</button>' +
+                            '</div>' +
+                        '</div>';
+            });
+
+            container.innerHTML = html;
+        }
+
+        function addToCart(id) {
+            const item = ebooksData.find(e => e.id === id) || sessionsData.find(s => s.id === id);
+            if (!item) return;
+
+            const existing = cart.find(i => i.id === id);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                const itemType = ebooksData.some(e => e.id === id) ? 'Digital' : 'Sesión';
+                cart.push({ ...item, itemType, qty: 1 });
+            }
+
+            updateCartUI();
+            toggleCartDrawer(true);
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const badge = document.getElementById('cart-badge');
+            const container = document.getElementById('cart-items');
+            const totalEl = document.getElementById('cart-total');
+
+            const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
+
+            if (totalItems > 0) {
+                badge.innerText = totalItems;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+
+            if (cart.length === 0) {
+                container.innerHTML = '<div class="text-center py-12 text-brand-textMuted font-light text-sm"><i class="fa-solid fa-basket-shopping text-3xl mb-3 text-brand-goldBase/30"></i><p>El carrito está vacío</p></div>';
+                totalEl.innerText = '$0';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const itemPrice = currentCurrency === 'ARS' ? item.priceArs : item.priceUsd;
+                const subtotal = itemPrice * item.qty;
+                total += subtotal;
+
+                html += '<div class="flex items-center justify-between p-4 rounded-2xl bg-brand-plumDark/90 border border-brand-goldBase/30">' +
+                            '<div>' +
+                                '<span class="inline-block text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded bg-brand-goldBase/10 text-brand-goldLight mb-1 border border-brand-goldBase/20">' + (item.itemType || 'Item') + '</span>' +
+                                '<h5 class="font-medium text-sm text-brand-textBright">' + item.title + '</h5>' +
+                                '<p class="text-xs text-brand-textMuted font-light mt-1">' + item.qty + ' x ' + (currentCurrency === 'ARS' ? '$' + itemPrice.toLocaleString('es-AR') + ' ARS' : '$' + itemPrice + ' USD') + '</p>' +
+                            '</div>' +
+                            '<button onclick="removeFromCart(\'' + item.id + '\')" class="text-brand-textMuted hover:text-red-400 p-2 transition-colors">' +
+                                '<i class="fa-solid fa-trash-can text-sm"></i>' +
+                            '</button>' +
+                        '</div>';
+            });
+
+            container.innerHTML = html;
+            totalEl.innerText = currentCurrency === 'ARS' ? '$' + total.toLocaleString('es-AR') + ' ARS' : '$' + total + ' USD';
+        }
+
+        function toggleCartDrawer(open) {
+            const drawer = document.getElementById('cart-drawer');
+            if (open === true) {
+                drawer.classList.remove('hidden');
+            } else if (open === false) {
+                drawer.classList.add('hidden');
+            } else {
+                drawer.classList.toggle('hidden');
+            }
+        }
+
+        function checkoutWhatsApp() {
+            if (cart.length === 0) return;
+
+            let message = 'Hola Verónica, me gustaría coordinar la reserva/compra de los siguientes ítems:\n\n';
+            let total = 0;
+
+            cart.forEach(item => {
+                const itemPrice = currentCurrency === 'ARS' ? item.priceArs : item.priceUsd;
+                const sub = itemPrice * item.qty;
+                total += sub;
+                const typeLabel = item.itemType ? '[' + item.itemType + '] ' : '';
+                message += '- ' + typeLabel + item.title + ' (' + item.qty + 'x)\n';
+            });
+
+            message += '\nTotal: ' + (currentCurrency === 'ARS' ? '$' + total.toLocaleString('es-AR') + ' ARS' : '$' + total + ' USD');
+
+            const url = 'https://wa.me/5491170135315?text=' + encodeURIComponent(message);
+            window.open(url, '_blank');
+        }
+
+        function openModal(id, type) {
+            const container = document.getElementById('modal-container');
+            const content = document.getElementById('modal-content');
+
+            const item = (type === 'session') 
+                ? sessionsData.find(s => s.id === id) 
+                : ebooksData.find(e => e.id === id);
+
+            if (!item) return;
+
+            const msg = encodeURIComponent('Hola Verónica, quisiera más información sobre ' + item.title);
+
+            content.innerHTML = '<div class="space-y-5">' +
+                                    '<div class="h-60 rounded-2xl overflow-hidden border border-brand-goldBase/30 relative">' +
+                                        '<img src="' + item.image + '" alt="' + item.title + '" class="w-full h-full object-cover">' +
+                                        '<div class="absolute top-3 right-3 bg-brand-plumDark/90 border border-brand-goldBase/40 text-brand-goldLight font-medium text-xs px-3.5 py-1.5 rounded-full shadow-lg backdrop-blur-md">' + formatPrice(item.priceArs, item.priceUsd) + '</div>' +
+                                    '</div>' +
+                                    '<div>' +
+                                        '<span class="inline-block text-[11px] font-semibold tracking-wider uppercase text-brand-goldLight bg-brand-goldBase/10 border border-brand-goldBase/30 px-3 py-1 rounded-full mb-2">' + (type === 'session' ? 'Sesión Online Individual' : 'Recurso Digital') + '</span>' +
+                                        '<h3 class="text-2xl sm:text-3xl font-serif font-medium gold-text-gradient">' + item.title + '</h3>' +
+                                    '</div>' +
+                                    '<p class="text-brand-textMuted text-sm font-light leading-relaxed">' + item.description + '</p>' +
+                                    '<div class="p-5 rounded-2xl bg-brand-plumDark/90 border border-brand-goldBase/20 space-y-2.5">' +
+                                        '<h4 class="text-xs uppercase tracking-wider font-semibold text-brand-goldLight flex items-center"><i class="fa-solid fa-sparkles text-brand-goldBase mr-2"></i>Información destacada:</h4>' +
+                                        '<ul class="text-xs sm:text-sm text-brand-textMuted space-y-2 pl-5 list-disc font-light">' +
+                                            '<li>Acompañamiento personalizado y confidencial.</li>' +
+                                            '<li>Atención global en español desde la comodidad de tu hogar.</li>' +
+                                            '<li>Material y herramientas de profunda transformación.</li>' +
+                                        '</ul>' +
+                                    '</div>' +
+                                    '<div class="flex flex-col sm:flex-row gap-3 pt-2">' +
+                                        '<button onclick="addToCart(\'' + item.id + '\'); closeModal();" class="flex-1 luxe-btn-gold font-semibold text-xs tracking-wider uppercase py-4 rounded-xl text-center transition-colors flex items-center justify-center space-x-2">' +
+                                            '<i class="fa-solid fa-cart-plus text-sm"></i>' +
+                                            '<span>Agregar al Carrito</span>' +
+                                        '</button>' +
+                                        '<a href="https://wa.me/5491170135315?text=' + msg + '" target="_blank" class="flex-1 bg-brand-plumCard border border-brand-goldBase/40 hover:border-brand-goldBase text-brand-goldLight font-semibold text-xs tracking-wider uppercase py-4 rounded-xl text-center transition-colors flex items-center justify-center space-x-2">' +
+                                            '<i class="fa-brands fa-whatsapp text-base text-emerald-400"></i>' +
+                                            '<span>WhatsApp</span>' +
+                                        '</a>' +
+                                    '</div>' +
+                                '</div>';
+
+            if (container) {
+                container.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal() {
+            const container = document.getElementById('modal-container');
+            if (container) {
+                container.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        window.onload = function() {
+            renderSessions();
+            renderEbooks();
+        };
+    </script>
+</body>
+</html>
