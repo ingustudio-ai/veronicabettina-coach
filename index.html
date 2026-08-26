@@ -248,30 +248,30 @@
                             <i class="fa-solid fa-sparkles text-brand-goldBase"></i> Herramientas de Transformación Profunda
                         </h3>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                            <div class="flex items-center p-4 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20 hover:border-brand-goldBase/50 transition-colors">
+                            <a href="#session-constelaciones" class="flex items-center p-4 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20 hover:border-brand-goldBase/50 transition-colors">
                                 <i class="fa-solid fa-tree text-brand-goldBase text-base mr-3.5"></i>
                                 <span class="text-sm font-medium text-brand-textBright">Constelaciones Familiares</span>
-                            </div>
-                            <div class="flex items-center p-4 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20 hover:border-brand-goldBase/50 transition-colors">
+                            </a>
+                            <a href="#session-arbol" class="flex items-center p-4 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20 hover:border-brand-goldBase/50 transition-colors">
                                 <i class="fa-solid fa-sitemap text-brand-roseAccent text-base mr-3.5"></i>
                                 <span class="text-sm font-medium text-brand-textBright">Árbol Genealógico</span>
-                            </div>
-                            <div class="flex items-center p-4 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20 hover:border-brand-goldBase/50 transition-colors">
+                            </a>
+                            <a href="#session-biodecodificacion" class="flex items-center p-4 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20 hover:border-brand-goldBase/50 transition-colors">
                                 <i class="fa-solid fa-dna text-brand-goldLight text-base mr-3.5"></i>
                                 <span class="text-sm font-medium text-brand-textBright">Biodecodificación</span>
-                            </div>
-                            <div class="flex items-center p-4 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20 hover:border-brand-goldBase/50 transition-colors">
+                            </a>
+                            <a href="#session-regresiones" class="flex items-center p-4 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20 hover:border-brand-goldBase/50 transition-colors">
                                 <i class="fa-solid fa-hourglass-half text-brand-goldBase text-base mr-3.5"></i>
                                 <span class="text-sm font-medium text-brand-textBright">Regresiones & Vidas Pasadas</span>
-                            </div>
-                            <div class="flex items-center p-4 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20 hover:border-brand-goldBase/50 transition-colors">
+                            </a>
+                            <a href="#session-hipnosis" class="flex items-center p-4 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20 hover:border-brand-goldBase/50 transition-colors">
                                 <i class="fa-solid fa-brain text-brand-roseAccent text-base mr-3.5"></i>
                                 <span class="text-sm font-medium text-brand-textBright">Hipnosis Clínica</span>
-                            </div>
-                            <div class="flex items-center p-4 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20 hover:border-brand-goldBase/50 transition-colors">
+                            </a>
+                            <a href="#session-eft" class="flex items-center p-4 rounded-2xl bg-brand-plumDark/80 border border-brand-goldBase/20 hover:border-brand-goldBase/50 transition-colors">
                                 <i class="fa-solid fa-hand-holding-heart text-brand-goldLight text-base mr-3.5"></i>
                                 <span class="text-sm font-medium text-brand-textBright">EFT Tapping</span>
-                            </div>
+                            </a>
                         </div>
                     </div>
 
@@ -754,7 +754,7 @@
                 const price = formatPrice(s.priceArs, s.priceUsd);
                 const msg = encodeURIComponent('Hola Verónica, quisiera reservar la sesión de ' + s.title);
 
-                html += '<div class="luxe-card rounded-3xl overflow-hidden flex flex-col justify-between">' +
+                html += '<div id="session-' + s.id + '" class="luxe-card rounded-3xl overflow-hidden flex flex-col justify-between">' +
                             '<div>' +
                                 '<div class="h-52 overflow-hidden relative border-b border-brand-goldBase/20">' +
                                     '<img src="' + s.image + '" alt="' + s.title + '" class="w-full h-full object-cover">' +
