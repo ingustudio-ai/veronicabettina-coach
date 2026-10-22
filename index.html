@@ -42,6 +42,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
   line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
 }
 .bg-luxe {
   background: linear-gradient(180deg, #1A0A14 0%, #2D1025 50%, #1A0A14 100%);
@@ -74,6 +75,7 @@ body {
   letter-spacing: 0.05em;
   box-shadow: 0 4px 15px rgba(201, 168, 76, 0.3);
   transition: all 0.3s ease;
+  min-height: 48px;
 }
 .btn-gold:hover {
   filter: brightness(1.1);
@@ -84,6 +86,7 @@ body {
   border: 2px solid rgba(201, 168, 76, 0.4);
   color: #E8D5A3;
   transition: all 0.3s ease;
+  min-height: 48px;
 }
 .btn-outline:hover {
   border-color: #C9A84C;
@@ -96,14 +99,14 @@ body {
 .section-title {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(1.75rem, 5vw, 3.5rem);
   line-height: 1.2;
 }
 .section-subtitle {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
   font-style: italic;
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
 }
 .nav-link {
   font-family: 'Montserrat', sans-serif;
@@ -112,13 +115,29 @@ body {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   transition: color 0.3s ease;
+  padding: 0.5rem 0;
 }
 .nav-link:hover {
   color: #E8D5A3;
 }
-@media (max-width: 768px) {
-  .section-title { font-size: 1.8rem; }
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+@media (max-width: 640px) {
+  .section-title { font-size: 1.75rem; }
   .section-subtitle { font-size: 1rem; }
+  .card-luxe:hover { transform: none; }
+}
+@media (max-width: 480px) {
+  .hero-title { font-size: 2rem; line-height: 1.1; }
+}
+audio {
+  max-width: 100%;
+}
+img {
+  max-width: 100%;
+  height: auto;
 }
 </style>
 </head>
@@ -126,67 +145,67 @@ body {
 
 <!-- HEADER -->
 <header class="fixed top-0 left-0 right-0 z-50 bg-[#1A0A14]/95 backdrop-blur-md border-b border-[#C9A84C]/20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
-    <a href="#" class="flex items-center space-x-3">
-      <img src="LOGO_VB.png" alt="Logo" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-[#C9A84C]/40">
+  <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 h-14 sm:h-16 md:h-20 flex items-center justify-between">
+    <a href="#" class="flex items-center space-x-2 sm:space-x-3 touch-target">
+      <img src="LOGO_VB.png" alt="Logo" class="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full object-cover border-2 border-[#C9A84C]/40">
       <div>
-        <span class="block text-lg sm:text-xl font-display text-gradient-gold font-semibold">Ver&#243;nica</span>
-        <span class="block text-[10px] sm:text-xs font-sans text-[#C4A8B8] tracking-wider">COACH DE VIDA</span>
+        <span class="block text-base sm:text-lg md:text-xl font-display text-gradient-gold font-semibold">Ver&#243;nica</span>
+        <span class="block text-[9px] sm:text-[10px] md:text-xs font-sans text-[#C4A8B8] tracking-wider">COACH DE VIDA</span>
       </div>
     </a>
-    <nav class="hidden lg:flex items-center space-x-8">
+    <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8">
       <a href="#inicio" class="nav-link text-[#FAF6F0]/80">Inicio</a>
       <a href="#audio" class="nav-link text-[#FAF6F0]/80">Audio</a>
       <a href="#sesiones" class="nav-link text-[#FAF6F0]/80">Sesiones</a>
       <a href="#ebooks" class="nav-link text-[#FAF6F0]/80">Ebooks</a>
       <a href="#sobre-mi" class="nav-link text-[#FAF6F0]/80">Sobre M&#237;</a>
-      <a href="https://wa.me/5491170135315" target="_blank" class="btn-gold px-5 py-2.5 rounded-full text-xs tracking-wider uppercase">Contacto</a>
+      <a href="https://wa.me/5491170135315" target="_blank" class="btn-gold px-5 py-2.5 rounded-full text-xs tracking-wider uppercase touch-target">Contacto</a>
     </nav>
-    <button onclick="toggleMobileMenu()" class="lg:hidden text-[#E8D5A3] p-2" aria-label="Menu">
+    <button onclick="toggleMobileMenu()" class="lg:hidden text-[#E8D5A3] p-3 touch-target" aria-label="Menu">
       <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
     </button>
   </div>
   <div id="mobileMenu" class="hidden lg:hidden bg-[#1A0A14]/98 border-b border-[#C9A84C]/20 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-4 py-6 space-y-4">
-      <a href="#inicio" onclick="toggleMobileMenu()" class="block nav-link text-[#FAF6F0]/80 py-2">Inicio</a>
-      <a href="#audio" onclick="toggleMobileMenu()" class="block nav-link text-[#FAF6F0]/80 py-2">Audio</a>
-      <a href="#sesiones" onclick="toggleMobileMenu()" class="block nav-link text-[#FAF6F0]/80 py-2">Sesiones</a>
-      <a href="#ebooks" onclick="toggleMobileMenu()" class="block nav-link text-[#FAF6F0]/80 py-2">Ebooks</a>
-      <a href="#sobre-mi" onclick="toggleMobileMenu()" class="block nav-link text-[#FAF6F0]/80 py-2">Sobre M&#237;</a>
-      <a href="https://wa.me/5491170135315" target="_blank" class="block btn-gold px-5 py-3 rounded-full text-xs tracking-wider uppercase text-center mt-4">Contacto</a>
+    <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+      <a href="#inicio" onclick="toggleMobileMenu()" class="block nav-link text-[#FAF6F0]/80 py-3 touch-target">Inicio</a>
+      <a href="#audio" onclick="toggleMobileMenu()" class="block nav-link text-[#FAF6F0]/80 py-3 touch-target">Audio</a>
+      <a href="#sesiones" onclick="toggleMobileMenu()" class="block nav-link text-[#FAF6F0]/80 py-3 touch-target">Sesiones</a>
+      <a href="#ebooks" onclick="toggleMobileMenu()" class="block nav-link text-[#FAF6F0]/80 py-3 touch-target">Ebooks</a>
+      <a href="#sobre-mi" onclick="toggleMobileMenu()" class="block nav-link text-[#FAF6F0]/80 py-3 touch-target">Sobre M&#237;</a>
+      <a href="https://wa.me/5491170135315" target="_blank" class="block btn-gold px-5 py-3 rounded-full text-xs tracking-wider uppercase text-center mt-3 touch-target">Contacto</a>
     </div>
   </div>
 </header>
 
 <!-- HERO -->
-<section id="inicio" class="relative min-h-screen flex items-center justify-center bg-luxe pt-20 pb-16">
+<section id="inicio" class="relative min-h-screen flex items-center justify-center bg-luxe pt-20 sm:pt-24 pb-16">
   <div class="absolute inset-0 opacity-20">
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#8B6914]/30 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#5C1F45]/30 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/4 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-[#8B6914]/30 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-[#5C1F45]/30 rounded-full blur-3xl"></div>
   </div>
   <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
-    <img src="LOGO_VB.png" alt="Ver&#243;nica Bettina" class="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover mx-auto mb-8 border-4 border-[#C9A84C]/30 shadow-2xl">
-    <p class="font-display text-xl sm:text-2xl text-[#E8D5A3] mb-4 italic">@veronicabettina.coach</p>
-    <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gradient-gold leading-tight mb-6">
+    <img src="LOGO_VB.png" alt="Ver&#243;nica Bettina" class="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full object-cover mx-auto mb-6 sm:mb-8 border-4 border-[#C9A84C]/30 shadow-2xl">
+    <p class="font-display text-lg sm:text-xl md:text-2xl text-[#E8D5A3] mb-3 sm:mb-4 italic">@veronicabettina.coach</p>
+    <h1 class="hero-title font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gradient-gold leading-tight mb-5 sm:mb-6">
       Acompa&#241;amiento<br>Hol&#237;stico &amp; Sist&#233;mico
     </h1>
-    <p class="font-sans text-lg sm:text-xl text-[#C4A8B8] mb-10 max-w-2xl mx-auto leading-relaxed">
+    <p class="font-sans text-base sm:text-lg md:text-xl text-[#C4A8B8] mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
       Sesiones online y experiencias de transformaci&#243;n personal para sanar patrones, liberar emociones y reconectar con tu esencia.
     </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#sesiones" class="btn-gold px-8 py-4 rounded-full text-sm tracking-wider uppercase">Ver Sesiones</a>
-      <a href="#ebooks" class="btn-outline px-8 py-4 rounded-full text-sm tracking-wider uppercase">Ebooks Gratis</a>
+    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-sm sm:max-w-none mx-auto">
+      <a href="#sesiones" class="btn-gold px-8 py-4 rounded-full text-sm tracking-wider uppercase touch-target">Ver Sesiones</a>
+      <a href="#ebooks" class="btn-outline px-8 py-4 rounded-full text-sm tracking-wider uppercase touch-target">Ebooks Gratis</a>
     </div>
   </div>
 </section>
 
 <!-- AUDIO DEL PERD&#201;N -->
-<section id="audio" class="py-20 sm:py-28 bg-gold-section">
+<section id="audio" class="py-16 sm:py-20 md:py-28 bg-gold-section">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <div class="space-y-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+      <div class="space-y-6 sm:space-y-8">
         <div>
-          <span class="inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-[#8B6914]/30 bg-[#8B6914]/10 text-[#5C1F45] text-xs font-semibold tracking-widest uppercase">
+          <span class="inline-flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-full border border-[#8B6914]/30 bg-[#8B6914]/10 text-[#5C1F45] text-[10px] sm:text-xs font-semibold tracking-widest uppercase">
             <i class="fa-solid fa-spa text-[#8B6914]"></i>
             <span>Experiencia Terap&#233;utica</span>
           </span>
@@ -194,93 +213,93 @@ body {
         <h2 class="section-title text-[#2D1025]">Audio del Perd&#243;n</h2>
         <p class="section-subtitle text-[#5C1F45]">Meditaci&#243;n guiada para liberar rencores, culpas y heridas del pasado.</p>
         
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="flex items-start space-x-4 p-4 rounded-2xl bg-white/40 border border-[#8B6914]/20">
-            <div class="w-10 h-10 rounded-full bg-[#8B6914]/20 flex items-center justify-center flex-shrink-0 text-[#8B6914]">
-              <i class="fa-solid fa-heart"></i>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          <div class="flex items-start space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-2xl bg-white/40 border border-[#8B6914]/20">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#8B6914]/20 flex items-center justify-center flex-shrink-0 text-[#8B6914]">
+              <i class="fa-solid fa-heart text-sm sm:text-base"></i>
             </div>
-            <span class="text-sm text-[#2D1025] font-medium leading-relaxed">Liber&#225; emociones atrapadas y encontr&#225; paz interior.</span>
+            <span class="text-xs sm:text-sm text-[#2D1025] font-medium leading-relaxed">Liber&#225; emociones atrapadas y encontr&#225; paz interior.</span>
           </div>
-          <div class="flex items-start space-x-4 p-4 rounded-2xl bg-white/40 border border-[#8B6914]/20">
-            <div class="w-10 h-10 rounded-full bg-[#8B6914]/20 flex items-center justify-center flex-shrink-0 text-[#8B6914]">
-              <i class="fa-solid fa-hand-holding-heart"></i>
+          <div class="flex items-start space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-2xl bg-white/40 border border-[#8B6914]/20">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#8B6914]/20 flex items-center justify-center flex-shrink-0 text-[#8B6914]">
+              <i class="fa-solid fa-hand-holding-heart text-sm sm:text-base"></i>
             </div>
-            <span class="text-sm text-[#2D1025] font-medium leading-relaxed">Mejor&#225; tus relaciones y tu conexi&#243;n personal.</span>
+            <span class="text-xs sm:text-sm text-[#2D1025] font-medium leading-relaxed">Mejor&#225; tus relaciones y tu conexi&#243;n personal.</span>
           </div>
-          <div class="flex items-start space-x-4 p-4 rounded-2xl bg-white/40 border border-[#8B6914]/20">
-            <div class="w-10 h-10 rounded-full bg-[#8B6914]/20 flex items-center justify-center flex-shrink-0 text-[#8B6914]">
-              <i class="fa-solid fa-moon"></i>
+          <div class="flex items-start space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-2xl bg-white/40 border border-[#8B6914]/20">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#8B6914]/20 flex items-center justify-center flex-shrink-0 text-[#8B6914]">
+              <i class="fa-solid fa-moon text-sm sm:text-base"></i>
             </div>
-            <span class="text-sm text-[#2D1025] font-medium leading-relaxed">Dorm&#237;s m&#225;s liviano/a y en plena armon&#237;a.</span>
+            <span class="text-xs sm:text-sm text-[#2D1025] font-medium leading-relaxed">Dorm&#237;s m&#225;s liviano/a y en plena armon&#237;a.</span>
           </div>
-          <div class="flex items-start space-x-4 p-4 rounded-2xl bg-white/40 border border-[#8B6914]/20">
-            <div class="w-10 h-10 rounded-full bg-[#8B6914]/20 flex items-center justify-center flex-shrink-0 text-[#8B6914]">
-              <i class="fa-solid fa-sun"></i>
+          <div class="flex items-start space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-2xl bg-white/40 border border-[#8B6914]/20">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#8B6914]/20 flex items-center justify-center flex-shrink-0 text-[#8B6914]">
+              <i class="fa-solid fa-sun text-sm sm:text-base"></i>
             </div>
-            <span class="text-sm text-[#2D1025] font-medium leading-relaxed">Abr&#237;s espacio para el amor y la abundancia.</span>
+            <span class="text-xs sm:text-sm text-[#2D1025] font-medium leading-relaxed">Abr&#237;s espacio para el amor y la abundancia.</span>
           </div>
         </div>
 
-        <div class="p-6 rounded-2xl border border-[#8B6914]/30 bg-white/50">
-          <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 rounded-full bg-[#2D1025] flex items-center justify-center text-[#E8D5A3] text-xl flex-shrink-0">
+        <div class="p-4 sm:p-6 rounded-2xl border border-[#8B6914]/30 bg-white/50">
+          <div class="flex items-start space-x-3 sm:space-x-4">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#2D1025] flex items-center justify-center text-[#E8D5A3] text-lg sm:text-xl flex-shrink-0">
               <i class="fa-solid fa-star"></i>
             </div>
-            <div class="text-sm text-[#2D1025]">
+            <div class="text-xs sm:text-sm text-[#2D1025]">
               <p class="font-semibold text-[#2D1025] mb-1">Recomendaci&#243;n:</p>
               <p>Escuchalo todas las noches antes de dormir, por lo menos <span class="font-bold underline decoration-[#C9A84C]">21 d&#237;as consecutivos</span>.</p>
             </div>
           </div>
         </div>
 
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="audio_del_perdon_VBcoach.mpeg" download class="flex-1 bg-[#2D1025] text-[#E8D5A3] hover:bg-[#3D1530] py-4 px-8 rounded-full font-semibold text-sm tracking-wider uppercase flex items-center justify-center space-x-2 border-2 border-[#2D1025] transition-colors">
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <a href="audio_del_perdon_VBcoach.mpeg" download class="flex-1 bg-[#2D1025] text-[#E8D5A3] hover:bg-[#3D1530] py-3 sm:py-4 px-6 sm:px-8 rounded-full font-semibold text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center space-x-2 border-2 border-[#2D1025] transition-colors touch-target">
             <i class="fa-solid fa-download"></i>
             <span>Descargar Gratis</span>
           </a>
-          <button onclick="document.getElementById('audioPlayer').play()" class="flex-1 btn-gold py-4 px-8 rounded-full text-sm tracking-wider uppercase flex items-center justify-center space-x-2">
+          <button onclick="document.getElementById('audioPlayer').play()" class="flex-1 btn-gold py-3 sm:py-4 px-6 sm:px-8 rounded-full text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center space-x-2 touch-target">
             <i class="fa-solid fa-play"></i>
             <span>Escuchar</span>
           </button>
         </div>
-        <p class="text-xs text-[#5C1F45] font-semibold">Por tiempo limitado</p>
+        <p class="text-[10px] sm:text-xs text-[#5C1F45] font-semibold">Por tiempo limitado</p>
       </div>
 
       <div class="flex justify-center">
-        <div class="w-full max-w-sm">
-          <div class="relative p-1 bg-gradient-to-br from-[#E8D5A3] via-[#C9A84C] to-[#8B6914] rounded-[2rem] shadow-2xl">
-            <div class="bg-[#1A0A14] rounded-[1.75rem] p-8 text-center space-y-6">
-              <div class="mx-auto w-20 h-20 rounded-full p-1 bg-gradient-to-br from-[#E8D5A3] via-[#C9A84C] to-[#8B6914]">
+        <div class="w-full max-w-[280px] sm:max-w-sm">
+          <div class="relative p-1 bg-gradient-to-br from-[#E8D5A3] via-[#C9A84C] to-[#8B6914] rounded-[1.5rem] sm:rounded-[2rem] shadow-2xl">
+            <div class="bg-[#1A0A14] rounded-[1.25rem] sm:rounded-[1.75rem] p-5 sm:p-8 text-center space-y-4 sm:space-y-6">
+              <div class="mx-auto w-16 h-16 sm:w-20 sm:h-20 rounded-full p-1 bg-gradient-to-br from-[#E8D5A3] via-[#C9A84C] to-[#8B6914]">
                 <img src="LOGO_VB.png" class="w-full h-full rounded-full object-cover">
               </div>
               <div>
-                <h3 class="font-display text-2xl text-[#E8D5A3]">Audio del Perd&#243;n</h3>
-                <p class="text-xs text-[#C4A8B8] tracking-widest uppercase mt-2">Meditaci&#243;n Guiada</p>
+                <h3 class="font-display text-xl sm:text-2xl text-[#E8D5A3]">Audio del Perd&#243;n</h3>
+                <p class="text-[10px] sm:text-xs text-[#C4A8B8] tracking-widest uppercase mt-1 sm:mt-2">Meditaci&#243;n Guiada</p>
               </div>
-              <div class="text-[#C9A84C] text-3xl">
+              <div class="text-[#C9A84C] text-2xl sm:text-3xl">
                 <i class="fa-solid fa-spa"></i>
               </div>
-              <div class="space-y-3">
+              <div class="space-y-2 sm:space-y-3">
                 <div class="w-full h-1.5 bg-[#3D1530] rounded-full overflow-hidden">
                   <div class="w-1/3 h-full bg-gradient-to-r from-[#C9A84C] to-[#E8D5A3] rounded-full"></div>
                 </div>
-                <div class="flex justify-between text-xs text-[#C4A8B8] font-mono">
+                <div class="flex justify-between text-[10px] sm:text-xs text-[#C4A8B8] font-mono">
                   <span>0:00</span>
                   <span>21:00</span>
                 </div>
               </div>
-              <div class="flex items-center justify-center space-x-6">
-                <button class="text-[#C4A8B8] hover:text-[#E8D5A3] p-2 transition-colors">
-                  <i class="fa-solid fa-backward-step text-lg"></i>
+              <div class="flex items-center justify-center space-x-5 sm:space-x-6">
+                <button class="text-[#C4A8B8] hover:text-[#E8D5A3] p-2 sm:p-3 touch-target transition-colors">
+                  <i class="fa-solid fa-backward-step text-base sm:text-lg"></i>
                 </button>
-                <button class="w-16 h-16 rounded-full btn-gold text-xl flex items-center justify-center shadow-lg">
+                <button class="w-14 h-14 sm:w-16 sm:h-16 rounded-full btn-gold text-lg sm:text-xl flex items-center justify-center shadow-lg touch-target">
                   <i class="fa-solid fa-play"></i>
                 </button>
-                <button class="text-[#C4A8B8] hover:text-[#E8D5A3] p-2 transition-colors">
-                  <i class="fa-solid fa-forward-step text-lg"></i>
+                <button class="text-[#C4A8B8] hover:text-[#E8D5A3] p-2 sm:p-3 touch-target transition-colors">
+                  <i class="fa-solid fa-forward-step text-base sm:text-lg"></i>
                 </button>
               </div>
-              <p class="font-display text-sm text-[#C9A84C] italic">21 noches pueden transformar tu vida</p>
+              <p class="font-display text-xs sm:text-sm text-[#C9A84C] italic">21 noches pueden transformar tu vida</p>
             </div>
           </div>
         </div>
@@ -297,33 +316,33 @@ body {
 </section>
 
 <!-- SESIONES -->
-<section id="sesiones" class="py-20 sm:py-28 bg-luxe">
+<section id="sesiones" class="py-16 sm:py-20 md:py-28 bg-luxe">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="inline-block text-xs font-semibold tracking-widest uppercase text-[#E8D5A3] border border-[#C9A84C]/30 px-4 py-2 rounded-full bg-[#3D1530]/50 mb-6">
+    <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+      <span class="inline-block text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-[#E8D5A3] border border-[#C9A84C]/30 px-3 sm:px-4 py-2 rounded-full bg-[#3D1530]/50 mb-4 sm:mb-6">
         Procesos Individuales
       </span>
-      <h2 class="section-title text-gradient-gold mb-4">Sesiones Online</h2>
-      <p class="font-sans text-[#C4A8B8] text-base sm:text-lg leading-relaxed">
+      <h2 class="section-title text-gradient-gold mb-3 sm:mb-4">Sesiones Online</h2>
+      <p class="font-sans text-[#C4A8B8] text-sm sm:text-base md:text-lg leading-relaxed">
         Encuentros virtuales individuales orientados a destrabar patrones y reordenar tu sistema familiar.
       </p>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
       
-      <div class="card-luxe rounded-3xl overflow-hidden">
-        <div class="h-52 overflow-hidden relative">
+      <div class="card-luxe rounded-2xl sm:rounded-3xl overflow-hidden">
+        <div class="h-40 sm:h-48 md:h-52 overflow-hidden relative">
           <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80" alt="Constelaciones" class="w-full h-full object-cover">
         </div>
-        <div class="p-6">
-          <h3 class="font-display text-2xl text-[#FAF6F0] mb-3">Constelaciones Familiares</h3>
-          <p class="font-sans text-sm text-[#C4A8B8] leading-relaxed mb-6">Proceso para visibilizar din&#225;micas ocultas en el sistema familiar y reordenar tu lugar en la vida.</p>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <button onclick="openSessionModal('constelaciones')" class="btn-outline flex-1 py-3 rounded-full text-xs tracking-wider uppercase flex items-center justify-center space-x-2">
+        <div class="p-4 sm:p-6">
+          <h3 class="font-display text-xl sm:text-2xl text-[#FAF6F0] mb-2 sm:mb-3">Constelaciones Familiares</h3>
+          <p class="font-sans text-xs sm:text-sm text-[#C4A8B8] leading-relaxed mb-4 sm:mb-6">Proceso para visibilizar din&#225;micas ocultas en el sistema familiar y reordenar tu lugar en la vida.</p>
+          <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
+            <button onclick="openSessionModal('constelaciones')" class="btn-outline flex-1 py-3 rounded-full text-[10px] sm:text-xs tracking-wider uppercase flex items-center justify-center space-x-2 touch-target">
               <i class="fa-solid fa-circle-info"></i>
               <span>M&#225;s Info</span>
             </button>
-            <a href="https://wa.me/5491170135315?text=Hola%20Ver%C3%B3nica,%20quiero%20agendar%20una%20sesi%C3%B3n%20de%20Constelaciones%20Familiares" target="_blank" class="btn-gold flex-1 py-3 rounded-full text-xs tracking-wider uppercase flex items-center justify-center space-x-2">
+            <a href="https://wa.me/5491170135315?text=Hola%20Ver%C3%B3nica,%20quiero%20agendar%20una%20sesi%C3%B3n%20de%20Constelaciones%20Familiares" target="_blank" class="btn-gold flex-1 py-3 rounded-full text-[10px] sm:text-xs tracking-wider uppercase flex items-center justify-center space-x-2 touch-target">
               <i class="fa-brands fa-whatsapp"></i>
               <span>Agendar</span>
             </a>
@@ -331,19 +350,19 @@ body {
         </div>
       </div>
 
-      <div class="card-luxe rounded-3xl overflow-hidden">
-        <div class="h-52 overflow-hidden relative">
+      <div class="card-luxe rounded-2xl sm:rounded-3xl overflow-hidden">
+        <div class="h-40 sm:h-48 md:h-52 overflow-hidden relative">
           <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80" alt="Arbol Genealogico" class="w-full h-full object-cover">
         </div>
-        <div class="p-6">
-          <h3 class="font-display text-2xl text-[#FAF6F0] mb-3">&#193;rbol Geneal&#243;gico</h3>
-          <p class="font-sans text-sm text-[#C4A8B8] leading-relaxed mb-6">An&#225;lisis de fechas, nombres y repeticiones transgeneracionales para liberar mandatos inconscientes.</p>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <button onclick="openSessionModal('arbol')" class="btn-outline flex-1 py-3 rounded-full text-xs tracking-wider uppercase flex items-center justify-center space-x-2">
+        <div class="p-4 sm:p-6">
+          <h3 class="font-display text-xl sm:text-2xl text-[#FAF6F0] mb-2 sm:mb-3">&#193;rbol Geneal&#243;gico</h3>
+          <p class="font-sans text-xs sm:text-sm text-[#C4A8B8] leading-relaxed mb-4 sm:mb-6">An&#225;lisis de fechas, nombres y repeticiones transgeneracionales para liberar mandatos inconscientes.</p>
+          <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
+            <button onclick="openSessionModal('arbol')" class="btn-outline flex-1 py-3 rounded-full text-[10px] sm:text-xs tracking-wider uppercase flex items-center justify-center space-x-2 touch-target">
               <i class="fa-solid fa-circle-info"></i>
               <span>M&#225;s Info</span>
             </button>
-            <a href="https://wa.me/5491170135315?text=Hola%20Ver%C3%B3nica,%20quiero%20agendar%20una%20sesi%C3%B3n%20de%20Lectura%20de%20%C3%81rbol%20Geneal%C3%B3gico" target="_blank" class="btn-gold flex-1 py-3 rounded-full text-xs tracking-wider uppercase flex items-center justify-center space-x-2">
+            <a href="https://wa.me/5491170135315?text=Hola%20Ver%C3%B3nica,%20quiero%20agendar%20una%20sesi%C3%B3n%20de%20Lectura%20de%20%C3%81rbol%20Geneal%C3%B3gico" target="_blank" class="btn-gold flex-1 py-3 rounded-full text-[10px] sm:text-xs tracking-wider uppercase flex items-center justify-center space-x-2 touch-target">
               <i class="fa-brands fa-whatsapp"></i>
               <span>Agendar</span>
             </a>
@@ -351,19 +370,19 @@ body {
         </div>
       </div>
 
-      <div class="card-luxe rounded-3xl overflow-hidden">
-        <div class="h-52 overflow-hidden relative">
+      <div class="card-luxe rounded-2xl sm:rounded-3xl overflow-hidden">
+        <div class="h-40 sm:h-48 md:h-52 overflow-hidden relative">
           <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Biodecodificacion" class="w-full h-full object-cover">
         </div>
-        <div class="p-6">
-          <h3 class="font-display text-2xl text-[#FAF6F0] mb-3">Biodecodificaci&#243;n</h3>
-          <p class="font-sans text-sm text-[#C4A8B8] leading-relaxed mb-6">Comprende el sentido biol&#243;gico y emocional detr&#225;s de un s&#237;ntoma f&#237;sico para activar tu autorregulaci&#243;n.</p>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <button onclick="openSessionModal('biodecodificacion')" class="btn-outline flex-1 py-3 rounded-full text-xs tracking-wider uppercase flex items-center justify-center space-x-2">
+        <div class="p-4 sm:p-6">
+          <h3 class="font-display text-xl sm:text-2xl text-[#FAF6F0] mb-2 sm:mb-3">Biodecodificaci&#243;n</h3>
+          <p class="font-sans text-xs sm:text-sm text-[#C4A8B8] leading-relaxed mb-4 sm:mb-6">Comprende el sentido biol&#243;gico y emocional detr&#225;s de un s&#237;ntoma f&#237;sico para activar tu autorregulaci&#243;n.</p>
+          <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
+            <button onclick="openSessionModal('biodecodificacion')" class="btn-outline flex-1 py-3 rounded-full text-[10px] sm:text-xs tracking-wider uppercase flex items-center justify-center space-x-2 touch-target">
               <i class="fa-solid fa-circle-info"></i>
               <span>M&#225;s Info</span>
             </button>
-            <a href="https://wa.me/5491170135315?text=Hola%20Ver%C3%B3nica,%20quiero%20agendar%20una%20sesi%C3%B3n%20de%20Biodecodificaci%C3%B3n" target="_blank" class="btn-gold flex-1 py-3 rounded-full text-xs tracking-wider uppercase flex items-center justify-center space-x-2">
+            <a href="https://wa.me/5491170135315?text=Hola%20Ver%C3%B3nica,%20quiero%20agendar%20una%20sesi%C3%B3n%20de%20Biodecodificaci%C3%B3n" target="_blank" class="btn-gold flex-1 py-3 rounded-full text-[10px] sm:text-xs tracking-wider uppercase flex items-center justify-center space-x-2 touch-target">
               <i class="fa-brands fa-whatsapp"></i>
               <span>Agendar</span>
             </a>
@@ -371,19 +390,19 @@ body {
         </div>
       </div>
 
-      <div class="card-luxe rounded-3xl overflow-hidden">
-        <div class="h-52 overflow-hidden relative">
+      <div class="card-luxe rounded-2xl sm:rounded-3xl overflow-hidden">
+        <div class="h-40 sm:h-48 md:h-52 overflow-hidden relative">
           <img src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=800&q=80" alt="Regresiones" class="w-full h-full object-cover">
         </div>
-        <div class="p-6">
-          <h3 class="font-display text-2xl text-[#FAF6F0] mb-3">Regresiones &amp; Vidas Pasadas</h3>
-          <p class="font-sans text-sm text-[#C4A8B8] leading-relaxed mb-6">Viaje guiado a memorias pasadas para liberar contratos y cargas del alma que afectan tus decisiones.</p>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <button onclick="openSessionModal('regresiones')" class="btn-outline flex-1 py-3 rounded-full text-xs tracking-wider uppercase flex items-center justify-center space-x-2">
+        <div class="p-4 sm:p-6">
+          <h3 class="font-display text-xl sm:text-2xl text-[#FAF6F0] mb-2 sm:mb-3">Regresiones &amp; Vidas Pasadas</h3>
+          <p class="font-sans text-xs sm:text-sm text-[#C4A8B8] leading-relaxed mb-4 sm:mb-6">Viaje guiado a memorias pasadas para liberar contratos y cargas del alma que afectan tus decisiones.</p>
+          <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
+            <button onclick="openSessionModal('regresiones')" class="btn-outline flex-1 py-3 rounded-full text-[10px] sm:text-xs tracking-wider uppercase flex items-center justify-center space-x-2 touch-target">
               <i class="fa-solid fa-circle-info"></i>
               <span>M&#225;s Info</span>
             </button>
-            <a href="https://wa.me/5491170135315?text=Hola%20Ver%C3%B3nica,%20quiero%20agendar%20una%20sesi%C3%B3n%20de%20Regresiones%20y%20Vidas%20Pasadas" target="_blank" class="btn-gold flex-1 py-3 rounded-full text-xs tracking-wider uppercase flex items-center justify-center space-x-2">
+            <a href="https://wa.me/5491170135315?text=Hola%20Ver%C3%B3nica,%20quiero%20agendar%20una%20sesi%C3%B3n%20de%20Regresiones%20y%20Vidas%20Pasadas" target="_blank" class="btn-gold flex-1 py-3 rounded-full text-[10px] sm:text-xs tracking-wider uppercase flex items-center justify-center space-x-2 touch-target">
               <i class="fa-brands fa-whatsapp"></i>
               <span>Agendar</span>
             </a>
@@ -391,19 +410,19 @@ body {
         </div>
       </div>
 
-      <div class="card-luxe rounded-3xl overflow-hidden">
-        <div class="h-52 overflow-hidden relative">
+      <div class="card-luxe rounded-2xl sm:rounded-3xl overflow-hidden">
+        <div class="h-40 sm:h-48 md:h-52 overflow-hidden relative">
           <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Hipnosis" class="w-full h-full object-cover">
         </div>
-        <div class="p-6">
-          <h3 class="font-display text-2xl text-[#FAF6F0] mb-3">Hipnosis Terap&#233;utica</h3>
-          <p class="font-sans text-sm text-[#C4A8B8] leading-relaxed mb-6">T&#233;cnica profunda de relajaci&#243;n consciente para reprogramar h&#225;bitos, fobias y creencias limitantes.</p>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <button onclick="openSessionModal('hipnosis')" class="btn-outline flex-1 py-3 rounded-full text-xs tracking-wider uppercase flex items-center justify-center space-x-2">
+        <div class="p-4 sm:p-6">
+          <h3 class="font-display text-xl sm:text-2xl text-[#FAF6F0] mb-2 sm:mb-3">Hipnosis Terap&#233;utica</h3>
+          <p class="font-sans text-xs sm:text-sm text-[#C4A8B8] leading-relaxed mb-4 sm:mb-6">T&#233;cnica profunda de relajaci&#243;n consciente para reprogramar h&#225;bitos, fobias y creencias limitantes.</p>
+          <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
+            <button onclick="openSessionModal('hipnosis')" class="btn-outline flex-1 py-3 rounded-full text-[10px] sm:text-xs tracking-wider uppercase flex items-center justify-center space-x-2 touch-target">
               <i class="fa-solid fa-circle-info"></i>
               <span>M&#225;s Info</span>
             </button>
-            <a href="https://wa.me/5491170135315?text=Hola%20Ver%C3%B3nica,%20quiero%20agendar%20una%20sesi%C3%B3n%20de%20Hipnosis%20Terap%C3%A9utica" target="_blank" class="btn-gold flex-1 py-3 rounded-full text-xs tracking-wider uppercase flex items-center justify-center space-x-2">
+            <a href="https://wa.me/5491170135315?text=Hola%20Ver%C3%B3nica,%20quiero%20agendar%20una%20sesi%C3%B3n%20de%20Hipnosis%20Terap%C3%A9utica" target="_blank" class="btn-gold flex-1 py-3 rounded-full text-[10px] sm:text-xs tracking-wider uppercase flex items-center justify-center space-x-2 touch-target">
               <i class="fa-brands fa-whatsapp"></i>
               <span>Agendar</span>
             </a>
@@ -411,22 +430,23 @@ body {
         </div>
       </div>
 
-      <div class="card-luxe rounded-3xl overflow-hidden">
-        <div class="h-52 overflow-hidden relative">
+      <div class="card-luxe rounded-2xl sm:rounded-3xl overflow-hidden">
+        <div class="h-40 sm:h-48 md:h-52 overflow-hidden relative">
           <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=800&q=80" alt="EFT Tapping" class="w-full h-full object-cover">
         </div>
-        <div class="p-6">
-          <h3 class="font-display text-2xl text-[#FAF6F0] mb-3">EFT Tapping</h3>
-          <p class="font-sans text-sm text-[#C4A8B8] leading-relaxed mb-6">Estimulaci&#243;n de puntos meridianos para disolver angustia, miedo y dolor emocional de forma &#225;gil.</p>
-          <div class="flex flex-col sm:flex-row gap-3">
-            <button onclick="openSessionModal('eft')" class="btn-outline flex-1 py-3 rounded-full text-xs tracking-wider uppercase flex items-center justify-center space-x-2">
+        <div class="p-4 sm:p-6">
+          <h3 class="font-display text-xl sm:text-2xl text-[#FAF6F0] mb-2 sm:mb-3">EFT Tapping</h3>
+          <p class="font-sans text-xs sm:text-sm text-[#C4A8B8] leading-relaxed mb-4 sm:mb-6">Estimulaci&#243;n de puntos meridianos para disolver angustia, miedo y dolor emocional de forma &#225;gil.</p>
+          <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
+            <button onclick="openSessionModal('eft')" class="btn-outline flex-1 py-3 rounded-full text-[10px] sm:text-xs tracking-wider uppercase flex items-center justify-center space-x-2 touch-target">
               <i class="fa-solid fa-circle-info"></i>
               <span>M&#225;s Info</span>
             </button>
-            <a href="https://wa.me/5491170135315?text=Hola%20Ver%C3%B3nica,%20quiero%20agendar%20una%20sesi%C3%B3n%20de%20EFT%20Tapping" target="_blank" class="btn-gold flex-1 py-3 rounded-full text-xs tracking-wider uppercase flex items-center justify-center space-x-2">
+            <a href="https://wa.me/5491170135315?text=Hola%20Ver%C3%B3nica,%20quiero%20agendar%20una%20sesi%C3%B3n%20de%20EFT%20Tapping" target="_blank" class="btn-gold flex-1 py-3 rounded-full text-[10px] sm:text-xs tracking-wider uppercase flex items-center justify-center space-x-2 touch-target">
               <i class="fa-brands fa-whatsapp"></i>
               <span>Agendar</span>
-          </a>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -435,52 +455,52 @@ body {
 </section>
 
 <!-- EBOOKS GRATUITOS -->
-<section id="ebooks" class="py-20 sm:py-28 bg-luxe">
+<section id="ebooks" class="py-16 sm:py-20 md:py-28 bg-luxe">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="inline-block text-xs font-semibold tracking-widest uppercase text-[#E8D5A3] border border-[#C9A84C]/30 px-4 py-2 rounded-full bg-[#3D1530]/50 mb-6">
+    <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+      <span class="inline-block text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-[#E8D5A3] border border-[#C9A84C]/30 px-3 sm:px-4 py-2 rounded-full bg-[#3D1530]/50 mb-4 sm:mb-6">
         Recursos Gratuitos
       </span>
-      <h2 class="section-title text-gradient-gold mb-4">Ebooks &amp; Gu&#237;as</h2>
-      <p class="font-sans text-[#C4A8B8] text-base sm:text-lg leading-relaxed">
+      <h2 class="section-title text-gradient-gold mb-3 sm:mb-4">Ebooks &amp; Gu&#237;as</h2>
+      <p class="font-sans text-[#C4A8B8] text-sm sm:text-base md:text-lg leading-relaxed">
         Descarg&#225; gratis nuestras gu&#237;as dise&#241;adas para acompa&#241;ar tu proceso de transformaci&#243;n personal.
       </p>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-10 max-w-4xl mx-auto">
       
-      <div class="card-luxe rounded-3xl overflow-hidden flex flex-col">
-        <div class="h-64 overflow-hidden relative">
+      <div class="card-luxe rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col">
+        <div class="h-48 sm:h-56 md:h-64 overflow-hidden relative">
           <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80" alt="Arbol Genealogico - Raices y ancestros" class="w-full h-full object-cover">
-          <div class="absolute top-4 right-4 bg-[#1A0A14]/90 border border-[#4ADE80]/40 text-[#4ADE80] text-xs px-4 py-2 rounded-full backdrop-blur-md font-semibold">
+          <div class="absolute top-3 right-3 sm:top-4 sm:right-4 bg-[#1A0A14]/90 border border-[#4ADE80]/40 text-[#4ADE80] text-[10px] sm:text-xs px-3 sm:px-4 py-1.5 sm:py-2 rounded-full backdrop-blur-md font-semibold">
             &#10003; Gratis
           </div>
         </div>
-        <div class="p-6 flex-1 flex flex-col">
-          <h3 class="font-display text-2xl text-[#FAF6F0] mb-3">Decodificando Mi &#193;rbol Geneal&#243;gico</h3>
-          <p class="font-sans text-sm text-[#C4A8B8] leading-relaxed mb-6 flex-1">
+        <div class="p-4 sm:p-6 flex-1 flex flex-col">
+          <h3 class="font-display text-xl sm:text-2xl text-[#FAF6F0] mb-2 sm:mb-3">Decodificando Mi &#193;rbol Geneal&#243;gico</h3>
+          <p class="font-sans text-xs sm:text-sm text-[#C4A8B8] leading-relaxed mb-4 sm:mb-6 flex-1">
             Gu&#237;a completa con ejercicios pr&#225;cticos para empezar a trabajar con constelaciones familiares desde tu hogar.
           </p>
-          <a href="ebook-gratis-1.pdf" download class="btn-gold w-full py-4 rounded-full text-sm tracking-wider uppercase flex items-center justify-center space-x-2">
+          <a href="ebook-gratis-1.pdf" download class="btn-gold w-full py-3 sm:py-4 rounded-full text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center space-x-2 touch-target">
             <i class="fa-solid fa-download"></i>
             <span>Descargar Gratis</span>
           </a>
         </div>
       </div>
 
-      <div class="card-luxe rounded-3xl overflow-hidden flex flex-col">
-        <div class="h-64 overflow-hidden relative">
+      <div class="card-luxe rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col">
+        <div class="h-48 sm:h-56 md:h-64 overflow-hidden relative">
           <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=800&q=80" alt="Hablar con tus celulas - Respiracion y meditacion" class="w-full h-full object-cover">
-          <div class="absolute top-4 right-4 bg-[#1A0A14]/90 border border-[#4ADE80]/40 text-[#4ADE80] text-xs px-4 py-2 rounded-full backdrop-blur-md font-semibold">
+          <div class="absolute top-3 right-3 sm:top-4 sm:right-4 bg-[#1A0A14]/90 border border-[#4ADE80]/40 text-[#4ADE80] text-[10px] sm:text-xs px-3 sm:px-4 py-1.5 sm:py-2 rounded-full backdrop-blur-md font-semibold">
             &#10003; Gratis
           </div>
         </div>
-        <div class="p-6 flex-1 flex flex-col">
-          <h3 class="font-display text-2xl text-[#FAF6F0] mb-3">Hablar con tus C&#233;lulas</h3>
-          <p class="font-sans text-sm text-[#C4A8B8] leading-relaxed mb-6 flex-1">
+        <div class="p-4 sm:p-6 flex-1 flex flex-col">
+          <h3 class="font-display text-xl sm:text-2xl text-[#FAF6F0] mb-2 sm:mb-3">Hablar con tus C&#233;lulas</h3>
+          <p class="font-sans text-xs sm:text-sm text-[#C4A8B8] leading-relaxed mb-4 sm:mb-6 flex-1">
             Ejercicios de respiraci&#243;n guiada para reducir estr&#233;s, ansiedad y reconectar con tu cuerpo de forma r&#225;pida.
           </p>
-          <a href="ebook-gratis-2.pdf" download class="btn-gold w-full py-4 rounded-full text-sm tracking-wider uppercase flex items-center justify-center space-x-2">
+          <a href="ebook-gratis-2.pdf" download class="btn-gold w-full py-3 sm:py-4 rounded-full text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center space-x-2 touch-target">
             <i class="fa-solid fa-download"></i>
             <span>Descargar Gratis</span>
           </a>
@@ -492,31 +512,31 @@ body {
 </section>
 
 <!-- SOBRE M&#205; -->
-<section id="sobre-mi" class="py-20 sm:py-28 bg-luxe">
+<section id="sobre-mi" class="py-16 sm:py-20 md:py-28 bg-luxe">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="max-w-4xl mx-auto card-luxe rounded-3xl p-8 sm:p-12 text-center">
-      <div class="mx-auto w-24 h-24 rounded-full p-1 bg-gradient-to-br from-[#E8D5A3] via-[#C9A84C] to-[#8B6914] mb-8 shadow-xl">
+    <div class="max-w-4xl mx-auto card-luxe rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-12 text-center">
+      <div class="mx-auto w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 bg-gradient-to-br from-[#E8D5A3] via-[#C9A84C] to-[#8B6914] mb-6 sm:mb-8 shadow-xl">
         <img src="LOGO_VB.png" class="w-full h-full rounded-full object-cover">
       </div>
-      <span class="inline-block text-xs font-semibold tracking-widest uppercase text-[#E8D5A3] border border-[#C9A84C]/30 px-4 py-2 rounded-full bg-[#1A0A14]/50 mb-6">
+      <span class="inline-block text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-[#E8D5A3] border border-[#C9A84C]/30 px-3 sm:px-4 py-2 rounded-full bg-[#1A0A14]/50 mb-4 sm:mb-6">
         Trayectoria &amp; Enfoque
       </span>
-      <h2 class="section-title text-gradient-gold mb-4">Te acompa&#241;o a mirar tu sistema con amor y claridad</h2>
-      <p class="font-display text-2xl sm:text-3xl text-[#D4A5A5] mb-8 italic">Ver&#243;nica Bettina &#8226; Coach de Vida</p>
-      <p class="font-sans text-[#C4A8B8] leading-relaxed max-w-2xl mx-auto mb-10">
+      <h2 class="section-title text-gradient-gold mb-3 sm:mb-4">Te acompa&#241;o a mirar tu sistema con amor y claridad</h2>
+      <p class="font-display text-xl sm:text-2xl md:text-3xl text-[#D4A5A5] mb-6 sm:mb-8 italic">Ver&#243;nica Bettina &#8226; Coach de Vida</p>
+      <p class="font-sans text-sm sm:text-base text-[#C4A8B8] leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10">
         Mi prop&#243;sito es brindarte un espacio seguro de escucha, sin juicios, donde podamos integrar la mirada sist&#233;mica con herramientas terap&#233;uticas complementarias para tu transformaci&#243;n.
       </p>
       
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
-        <div class="p-6 rounded-2xl bg-[#1A0A14]/60 border border-[#C9A84C]/20">
-          <i class="fa-solid fa-certificate text-[#C9A84C] text-2xl mb-4"></i>
-          <h4 class="font-sans font-semibold text-[#E8D5A3] text-sm uppercase tracking-wider mb-2">Formaci&#243;n Continua</h4>
-          <p class="font-sans text-sm text-[#C4A8B8]">Constelaciones, Biodecodificaci&#243;n e Hipnosis Terap&#233;utica.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 text-left">
+        <div class="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-[#1A0A14]/60 border border-[#C9A84C]/20">
+          <i class="fa-solid fa-certificate text-[#C9A84C] text-xl sm:text-2xl mb-3 sm:mb-4"></i>
+          <h4 class="font-sans font-semibold text-[#E8D5A3] text-xs sm:text-sm uppercase tracking-wider mb-2">Formaci&#243;n Continua</h4>
+          <p class="font-sans text-xs sm:text-sm text-[#C4A8B8]">Constelaciones, Biodecodificaci&#243;n e Hipnosis Terap&#233;utica.</p>
         </div>
-        <div class="p-6 rounded-2xl bg-[#1A0A14]/60 border border-[#C9A84C]/20">
-          <i class="fa-solid fa-globe text-[#C9A84C] text-2xl mb-4"></i>
-          <h4 class="font-sans font-semibold text-[#E8D5A5] text-sm uppercase tracking-wider mb-2">Modalidad Online</h4>
-          <p class="font-sans text-sm text-[#C4A8B8]">Sesiones globales en espa&#241;ol desde tu hogar.</p>
+        <div class="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-[#1A0A14]/60 border border-[#C9A84C]/20">
+          <i class="fa-solid fa-globe text-[#C9A84C] text-xl sm:text-2xl mb-3 sm:mb-4"></i>
+          <h4 class="font-sans font-semibold text-[#E8D5A5] text-xs sm:text-sm uppercase tracking-wider mb-2">Modalidad Online</h4>
+          <p class="font-sans text-xs sm:text-sm text-[#C4A8B8]">Sesiones globales en espa&#241;ol desde tu hogar.</p>
         </div>
       </div>
     </div>
@@ -524,25 +544,25 @@ body {
 </section>
 
 <!-- CTA FINAL -->
-<section class="py-20 sm:py-24 bg-gold-section">
+<section class="py-14 sm:py-20 md:py-24 bg-gold-section">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-    <h2 class="section-title text-[#2D1025] mb-4">&#191;Listo para comenzar tu transformaci&#243;n?</h2>
-    <p class="section-subtitle text-[#5C1F45] mb-8">Agend&#225; tu primera sesi&#243;n y descubr&#237; el poder de tu sistema familiar.</p>
-    <a href="https://wa.me/5491170135315?text=Hola%20Ver%C3%B3nica,%20quiero%20agendar%20una%20sesi%C3%B3n" target="_blank" class="inline-flex items-center space-x-3 bg-[#2D1025] text-[#E8D5A3] px-10 py-5 rounded-full font-semibold text-sm tracking-wider uppercase hover:bg-[#3D1530] transition-colors shadow-xl">
-      <i class="fa-brands fa-whatsapp text-xl"></i>
+    <h2 class="section-title text-[#2D1025] mb-3 sm:mb-4">&#191;Listo para comenzar tu transformaci&#243;n?</h2>
+    <p class="section-subtitle text-[#5C1F45] mb-6 sm:mb-8">Agend&#225; tu primera sesi&#243;n y descubr&#237; el poder de tu sistema familiar.</p>
+    <a href="https://wa.me/5491170135315?text=Hola%20Ver%C3%B3nica,%20quiero%20agendar%20una%20sesi%C3%B3n" target="_blank" class="inline-flex items-center space-x-2 sm:space-x-3 bg-[#2D1025] text-[#E8D5A3] px-8 sm:px-10 py-4 sm:py-5 rounded-full font-semibold text-xs sm:text-sm tracking-wider uppercase hover:bg-[#3D1530] transition-colors shadow-xl touch-target">
+      <i class="fa-brands fa-whatsapp text-lg sm:text-xl"></i>
       <span>Escribir por WhatsApp</span>
     </a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-[#120810] py-16 border-t border-[#C9A84C]/20">
+<footer class="bg-[#120810] py-12 sm:py-16 border-t border-[#C9A84C]/20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
-      <div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 mb-10 sm:mb-12">
+      <div class="sm:col-span-2 md:col-span-1">
         <a href="#" class="flex items-center space-x-3 mb-4">
-          <img src="LOGO_VB.png" class="w-12 h-12 rounded-full object-cover border-2 border-[#C9A84C]/30">
-          <span class="font-display text-2xl text-gradient-gold font-semibold">Ver&#243;nica</span>
+          <img src="LOGO_VB.png" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-[#C9A84C]/30">
+          <span class="font-display text-xl sm:text-2xl text-gradient-gold font-semibold">Ver&#243;nica</span>
         </a>
         <p class="font-sans text-sm text-[#C4A8B8] leading-relaxed">
           Acompa&#241;amiento hol&#237;stico para sanar lealtades invisibles, transformar patrones y vivir con mayor libertad emocional.
@@ -550,37 +570,37 @@ body {
       </div>
       <div>
         <h4 class="font-sans text-xs uppercase tracking-widest font-semibold text-[#E8D5A3] mb-4">Navegaci&#243;n</h4>
-        <ul class="space-y-3">
-          <li><a href="#inicio" class="nav-link text-[#C4A8B8] hover:text-[#E8D5A3]">Inicio</a></li>
-          <li><a href="#audio" class="nav-link text-[#C4A8B8] hover:text-[#E8D5A3]">Audio del Perd&#243;n</a></li>
-          <li><a href="#sesiones" class="nav-link text-[#C4A8B8] hover:text-[#E8D5A3]">Sesiones</a></li>
-          <li><a href="#ebooks" class="nav-link text-[#C4A8B8] hover:text-[#E8D5A3]">Ebooks Gratis</a></li>
+        <ul class="space-y-2">
+          <li><a href="#inicio" class="nav-link text-[#C4A8B8] hover:text-[#E8D5A3] touch-target">Inicio</a></li>
+          <li><a href="#audio" class="nav-link text-[#C4A8B8] hover:text-[#E8D5A3] touch-target">Audio del Perd&#243;n</a></li>
+          <li><a href="#sesiones" class="nav-link text-[#C4A8B8] hover:text-[#E8D5A3] touch-target">Sesiones</a></li>
+          <li><a href="#ebooks" class="nav-link text-[#C4A8B8] hover:text-[#E8D5A3] touch-target">Ebooks Gratis</a></li>
         </ul>
       </div>
       <div>
         <h4 class="font-sans text-xs uppercase tracking-widest font-semibold text-[#E8D5A3] mb-4">Contacto</h4>
-        <ul class="space-y-3">
+        <ul class="space-y-2">
           <li>
-            <a href="https://wa.me/5491170135315" target="_blank" class="flex items-center text-[#C4A8B8] hover:text-[#E8D5A3] transition-colors">
-              <i class="fa-brands fa-whatsapp text-[#4ADE80] mr-3"></i>
+            <a href="https://wa.me/5491170135315" target="_blank" class="flex items-center text-xs sm:text-sm text-[#C4A8B8] hover:text-[#E8D5A3] transition-colors touch-target">
+              <i class="fa-brands fa-whatsapp text-[#4ADE80] mr-2 sm:mr-3"></i>
               +54 9 11 7013-5315
             </a>
           </li>
-          <li class="flex items-center text-[#C4A8B8]">
-            <i class="fa-solid fa-envelope text-[#C9A84C] mr-3"></i>
-            contacto@veronicabettina.com
+          <li class="flex items-center text-xs sm:text-sm text-[#C4A8B8]">
+            <i class="fa-solid fa-envelope text-[#C9A84C] mr-2 sm:mr-3"></i>
+            <span class="break-all">contacto@veronicabettina.com</span>
           </li>
           <li>
-            <a href="https://instagram.com" target="_blank" class="flex items-center text-[#C4A8B8] hover:text-[#E8D5A3] transition-colors">
-              <i class="fa-brands fa-instagram text-[#C9A84C] mr-3"></i>
+            <a href="https://instagram.com" target="_blank" class="flex items-center text-xs sm:text-sm text-[#C4A8B8] hover:text-[#E8D5A3] transition-colors touch-target">
+              <i class="fa-brands fa-instagram text-[#C9A84C] mr-2 sm:mr-3"></i>
               @veronicabettina.coach
             </a>
           </li>
         </ul>
       </div>
     </div>
-    <div class="pt-8 border-t border-[#C9A84C]/10 text-center">
-      <p class="font-sans text-sm text-[#C4A8B8]">&copy; 2026 Ver&#243;nica Bettina Coach de Vida. Todos los derechos reservados.</p>
+    <div class="pt-6 sm:pt-8 border-t border-[#C9A84C]/10 text-center">
+      <p class="font-sans text-xs sm:text-sm text-[#C4A8B8]">&copy; 2026 Ver&#243;nica Bettina Coach de Vida. Todos los derechos reservados.</p>
     </div>
   </div>
 </footer>
